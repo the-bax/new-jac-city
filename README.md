@@ -1,34 +1,93 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# New Jac City
 
-## Getting Started
+This is the Next.js CMS app for [the-jac.co.nz](https://the-jac.co.nz/), coming
+soon.
 
-First, run the development server:
+## Set up
 
-```bash
-npm run dev
-# or
-yarn dev
+You should have the latest version of Node.js installed [currently 15.10.0_1].
+We'll run on the _edge_. If you're on a Mac, install
+[Homebrew](https://brew.sh/) and run `brew upgrade` daily to keep your libraries
+up to date.
+
+You'll need `git` and `node` installed, whether with `brew` or some other
+package manager.
+
+This app uses [pnpm](https://pnpm.js.org/). Do not use `npm` or `yarn`.
+
+To use, install `pnpm`:
+
+```sh
+npx pnpm add -g pnpm
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then upgrade it:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```sh
+pnpm add -g pnpm
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Keep it updated regularly.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+I add an alias to my `.zshrc` (`.bashrc`) file:
 
-## Learn More
+```sh
+alias p="pnpm"
+```
 
-To learn more about Next.js, take a look at the following resources:
+So now I can install the packages with:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+p i
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+(If you don't add the alias, you'll need to do `pnpm i` instead.)
 
-## Deploy on Vercel
+Then I can run the dev server with:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```sh
+p dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+As we set this up, I will keep this README up to date, so check for changes.
+
+# Editors
+
+I strongly recommend that you use the latest
+[Visual Studio Code](https://code.visualstudio.com/) for this work so that we're
+all on the same page. You should also install these extensions to VSCode:
+
+- apollographql.vscode-apollo
+- mgmcdermott.vscode-language-babel
+- clinyong.vscode-css-modules
+- mikestead.dotenv
+- editorconfig.editorconfig
+- dbaeumer.vscode-eslint
+- xyz.local-history
+- devine-davies.make-hidden
+- bierner.markdown-preview-github-styles
+- davidanson.vscode-markdownlint
+- esbenp.prettier-vscode
+- richie5um2.vscode-sort-json
+- tyriar.sort-lines
+- unional.vscode-sort-package-json
+- stylelint.vscode-stylelint
+- mike-co.import-sorter
+
+Once you have those installed, open your preferences [⌘,], and search for
+`formatOnSave`. Set it to `true` at least for this workspace.
+
+I've installed ESLint for linting and Prettier for code formatting and tightened
+up Babel.
+
+To lint your files, run:
+
+```sh
+p lint # `pnpm lint` if you didn't make the alias, but you really should make the alias
+```
+
+To format your files, run:
+
+```sh
+p format # but if you set formatOnSave to true, this should happen automagically
+```
