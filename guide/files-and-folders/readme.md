@@ -18,7 +18,7 @@ it's only a single line), exported as the default export.**
   - Tests for the component are in `index.spec.tsx` _in the same folder_.
   - CSS module for the component goes in `index.module.css`.
 
-# Sub-components
+## Sub-components
 
 - Subcomponent folders should be nested in the folder of the immediate parent
   component _unless they are reused elsewhere_.
@@ -39,7 +39,7 @@ it's only a single line), exported as the default export.**
       - `index.spec.tsx`
       - `index.module.css`
 
-# Reused components
+## Reused components
 
 If the `components/` folder structure follows the structure of the generic page,
 then the top level should be:
@@ -106,7 +106,7 @@ recognizable and the reusable ("generic") components are grouped by function.
 
 There is no "perfect" way to organize files, but this is a very good one.
 
-# Pages
+## Pages
 
 Files in the `pages/` folder become the pathnames in the URL for those pages. We
 want the pathnames to be in train-case, so we will name the folders accordingly:
