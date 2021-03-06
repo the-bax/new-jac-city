@@ -1,0 +1,47 @@
+.footer {
+  align-items: center;
+  background-color: hsla(224, 45%, 22%, 1);
+  color: hsla(0, 0%, 100%, 1);
+  display: flex;
+  flex-direction: row;
+  font-family: 'Open Sans', Roboto, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  height: 10rem;
+  justify-content: center;
+  width: 100vw;
+}
+
+.footer a {
+  color: hsla(0, 0%, 100%, 0.8);
+  text-decoration: none;
+}
+
+.footer a:focus,
+.footer a:hover {
+  color: lemonchiffon;
+  text-decoration: underline;
+}
+
+.separator {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+.icon:hover {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 700px) {
+  .separator {
+    display: none;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0;
+    width: 100vw;
+  }
+}

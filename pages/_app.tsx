@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import { AppProps } from 'next/app'
-import config from '../data/SiteConfig'
+import config from '../config/site';
+import Head from 'next/head';
+import { AppProps } from 'next/app';
+import '../styles/globals.css';
 
-import '../styles/globals.css'
 
-export default function App({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   const schemaOrgJSONLD = [
     {
       '@context': 'http://schema.org',
@@ -91,3 +91,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   )
 }
+
+export default MyApp

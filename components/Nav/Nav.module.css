@@ -1,0 +1,36 @@
+.nav {
+  background-color: hsla(224, 19%, 35%, 1);
+  color: hsla(0, 0%, 100%, 1);
+  height: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav > ul {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav > ul > li {
+  margin: 0;
+  padding: 0;
+}
+
+.nav > ul > li > a {
+  background-color: hsla(224, 19%, 35%, 1);
+  color: hsla(0, 0%, 100%, 1);
+  display: inline-block;
+  padding: 0 1rem;
+  text-decoration: none;
+}
+
+.nav > ul > li > a:focus,
+.nav > ul > li > a:hover {
+  color: lemonchiffon;
+  text-decoration: underline;
+}

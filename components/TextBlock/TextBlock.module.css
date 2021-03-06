@@ -1,0 +1,12 @@
+.textblock {
+  max-width: 60ch;
+}
+
+.textblock > * {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.textblock > * + * {
+  margin-top: var(--space);
+}

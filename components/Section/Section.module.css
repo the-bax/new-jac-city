@@ -1,0 +1,10 @@
+.section {
+  margin: 1rem 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 860px) {
+  .section {
+    width: calc(100vw - 4rem);
+  }
+}
