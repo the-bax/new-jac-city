@@ -15,5 +15,5 @@ contributes to confusion and contention.
 - [React](react/readme.md)
 - [Site pages](site-pages/readme.md)
 - [Testing](testing/readme.md)
-- [TyepScript](site-pages/readme.md)
+- [TypeScript](typescript/readme.md)
 - [Whitespace](whitespace/readme.md)

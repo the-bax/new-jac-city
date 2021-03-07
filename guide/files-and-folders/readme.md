@@ -154,8 +154,8 @@ pages/
     we use Google fonts we might have a `fonts.css` file.
   - It is OK to name files other than `index.css` here: there won't be many
     files.
-- `utilties/`:
-  - Global utility functions should go in the `utilties/` folder at the top
+- `utilities/`:
+  - Global utility functions should go in the `utilities/` folder at the top
     level.
   - If utilities are only used within a module, then put a `utilities` folder
     _in that module folder_.
