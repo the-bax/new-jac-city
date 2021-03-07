@@ -8,6 +8,15 @@ readable.
 
 For formatting, we use **Prettier**.
 
+There is a script in the `package.json` file to permit you to run the formatter with `pnpm format` (or `p format` if
+you've added the alias to your shell):
+
+```json
+"scripts": {
+  "format": "prettier --ignore-path .gitignore --write '**/*.{ts,tsx}'"
+}
+```
+
 ## Semicolons
 
 While I initially resisted removing semicolons from my code despite the code looking much cleaner, after I noted that
@@ -186,20 +195,13 @@ and enable it.
 This keeps all our code synchronized and prevents unnecessary noise in Git diff files on pull requests caused by code
 reformatting between developers.
 
-We also use [`husky`](https://github.com/typicode/husky) and [`lint-staged`](https://github.com/okonet/lint-staged) to
-[automatically format files](https://prettier.io/docs/en/precommit.html#option-1-lint-stagedhttpsgithubcomokonetlint-staged)&mdash;and
-run [ESLint](https://eslint.org/)&mdash;on git commit:
+We also use [`husky`](https://github.com/typicode/husky) to run pnpm commands on git commit (see `.husky/pre-commit`):
 
-```json
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --cache --fix",
-      "prettier --write"
-    ]
-  }
+```sh
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+pnpm lint
+pnpm format
+pnpm test:local
 ```
