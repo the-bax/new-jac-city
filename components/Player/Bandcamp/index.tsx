@@ -1,4 +1,4 @@
-import EmbeddedContent from '../EmbeddedContent'
+import EmbeddedContent from '../../EmbeddedContent'
 import style from './Bandcamp.module.css'
 
 export default function Bandcamp(): JSX.Element {
