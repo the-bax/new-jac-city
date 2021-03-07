@@ -1,6 +1,6 @@
 import style from './Clouds.module.css'
 
-export default function Clouds() {
+export default function Clouds(): JSX.Element {
   return (
     <>
       <div className={style.moon}>

@@ -1,6 +1,6 @@
 import style from './CallToAction.module.css'
 
-export default function CallToAction() {
+export default function CallToAction(): JSX.Element {
   return (
     <section className={style.section}>
       <p>

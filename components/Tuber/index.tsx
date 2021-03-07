@@ -11,7 +11,7 @@ export type TuberProps = {
 export default function Tuber({
   allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
   src,
-}: TuberProps) {
+}: TuberProps): JSX.Element {
   return (
     <section className={style.tuber}>
       <EmbeddedContent allow={allow} allowFullScreen={true} src={src} />

@@ -1,7 +1,7 @@
 import EmbeddedContent from '../EmbeddedContent'
 import style from './Bandcamp.module.css'
 
-export default function Bandcamp() {
+export default function Bandcamp(): JSX.Element {
   return (
     <section className={style.bandcamp}>
       <EmbeddedContent

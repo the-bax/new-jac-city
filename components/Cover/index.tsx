@@ -1,6 +1,6 @@
 import style from './Cover.module.css'
 
-export default function Cover() {
+export default function Cover(): JSX.Element {
   return (
     <img
       alt="A Gathering album cover: swans gathering around a pool bearing an odd symbol"

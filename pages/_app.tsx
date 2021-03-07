@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { AppProps } from 'next/app'
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const schemaOrgJSONLD = [
     {
       '@context': 'http://schema.org',

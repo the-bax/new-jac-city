@@ -11,7 +11,7 @@ import Section from '../components/Section'
 import TextBlock from '../components/TextBlock'
 import Tuber from '../components/Tuber'
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <>
       <Clouds />
