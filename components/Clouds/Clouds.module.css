@@ -1,0 +1,36 @@
+.moon > img {
+  left: 3vw;
+  position: absolute;
+  top: 1vh;
+  width: 40vw;
+  z-index: 9;
+}
+
+.cloudsleft > img {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 32vw;
+  z-index: 10;
+}
+
+.cloudsright > img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 33vw;
+  z-index: 10;
+}
+
+@media screen and (max-width: 700px) {
+  .cloudsleft,
+  .cloudsright {
+    display: none;
+  }
+
+  .moon > img {
+    left: -17vh;
+    top: 0;
+    width: 50vh;
+  }
+}

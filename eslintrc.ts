@@ -1,12 +1,14 @@
-module.exports = {
+export default {
   env: {
     browser: true,
     commonjs: true,
     es6: true,
     node: true,
+    jest: true,
   },
   parser: '@typescript-eslint/parser',
   extends: [
+    'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:import/errors',
@@ -24,7 +26,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true, // enable linting for jsx files
     },
-    ecmaVersion: 12,
+    ecmaVersion: 2020,
     sourceType: 'module',
   },
   settings: {

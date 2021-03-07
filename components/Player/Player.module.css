@@ -1,0 +1,20 @@
+.player {
+  align-items: center;
+  background-color: hsla(211, 66%, 93%, 1);
+  display: flex;
+  height: 400px;
+  justify-content: center;
+}
+
+@media screen and (max-width: 860px) {
+  .player {
+    flex-direction: column-reverse;
+    height: auto;
+    padding: 2rem 0;
+  }
+
+  .player > * + * {
+    height: auto;
+    margin: 0 0 2rem;
+  }
+}
