@@ -1,17 +1,15 @@
 # New Jac City
 
-This is the Next.js CMS app for [the-jac.co.nz](https://the-jac.co.nz/), coming
-soon.
+This is the Next.js CMS app for [the-jac.co.nz](https://the-jac.co.nz/), coming soon.
+
+**PLEASE READ AND HEED THE [STYLE GUIDE](/guide/readme.md) BEFORE SUBMITTING A PR.**
 
 ## Set up
 
-You should have the latest version of Node.js installed [currently 15.10.0_1].
-We'll run on the _edge_. If you're on a Mac, install
-[Homebrew](https://brew.sh/) and run `brew upgrade` daily to keep your libraries
-up to date.
+You should have the latest version of Node.js installed [currently 15.10.0_1]. We'll run on the _edge_. If you're on a
+Mac, install [Homebrew](https://brew.sh/) and run `brew upgrade` daily to keep your libraries up to date.
 
-You'll need `git` and `node` installed, whether with `brew` or some other
-package manager.
+You'll need `git` and `node` installed, whether with `brew` or some other package manager.
 
 This app uses [pnpm](https://pnpm.js.org/). Do not use `npm` or `yarn`.
 
@@ -53,9 +51,8 @@ As we set this up, I will keep this README up to date, so check for changes.
 
 # Editors
 
-I strongly recommend that you use the latest
-[Visual Studio Code](https://code.visualstudio.com/) for this work so that we're
-all on the same page. You should also install these extensions to VSCode:
+I strongly recommend that you use the latest [Visual Studio Code](https://code.visualstudio.com/) for this work so that
+we're all on the same page. You should also install these extensions to VSCode:
 
 - apollographql.vscode-apollo
 - mgmcdermott.vscode-language-babel
@@ -74,11 +71,10 @@ all on the same page. You should also install these extensions to VSCode:
 - stylelint.vscode-stylelint
 - mike-co.import-sorter
 
-Once you have those installed, open your preferences [⌘,], and search for
-`formatOnSave`. Set it to `true` at least for this workspace.
+Once you have those installed, open your preferences [⌘,], and search for `formatOnSave`. Set it to `true` at least for
+this workspace.
 
-I've installed ESLint for linting and Prettier for code formatting and tightened
-up Babel.
+I've installed ESLint for linting and Prettier for code formatting and tightened up Babel.
 
 To lint your files, run:
 
