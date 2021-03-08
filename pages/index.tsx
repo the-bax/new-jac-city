@@ -6,10 +6,10 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Main from '../components/Main'
 import Player from '../components/Player'
-import Rule from '../components/Rule'
-import Section from '../components/Section'
-import TextBlock from '../components/TextBlock'
-import Tuber from '../components/Tuber'
+import Rule from '../components/Main/Rule'
+import Section from '../components/Main/Section'
+import TextBlock from '../components/Main/TextBlock'
+import Tuber from '../components/Main/Tuber'
 
 export default function Home(): JSX.Element {
   return (

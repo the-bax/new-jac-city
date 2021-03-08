@@ -1,4 +1,4 @@
-import EmbeddedContent from '../EmbeddedContent'
+import EmbeddedContent from '../../EmbeddedContent'
 import style from './Tuber.module.css'
 
 export type TuberProps = {
