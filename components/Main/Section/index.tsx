@@ -4,6 +4,6 @@ export type SectionProps = {
   children: React.ReactNode
 }
 
-export default function Section({ children }: SectionProps) {
+export default function Section({ children }: SectionProps): JSX.Element {
   return <section className={style.section}>{children}</section>
 }

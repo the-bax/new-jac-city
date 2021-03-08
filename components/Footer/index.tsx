@@ -1,7 +1,7 @@
 import { SiFacebook as Facebook } from 'react-icons/si'
 import style from './Footer.module.css'
 
-export default function Footer() {
+export default function Footer(): JSX.Element {
   return (
     <footer className={style.footer} id="social">
       <span>

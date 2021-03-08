@@ -1,17 +1,17 @@
-import Bandcamp from '../components/Bandcamp'
-import CallToAction from '../components/CallToAction'
+import Bandcamp from '../components/Player/Bandcamp'
+import CallToAction from '../components/Player/CallToAction'
 import Clouds from '../components/Clouds'
-import Cover from '../components/Cover'
+import Cover from '../components/Player/Cover'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Main from '../components/Main'
 import Player from '../components/Player'
-import Rule from '../components/Rule'
-import Section from '../components/Section'
-import TextBlock from '../components/TextBlock'
-import Tuber from '../components/Tuber'
+import Rule from '../components/Main/Rule'
+import Section from '../components/Main/Section'
+import TextBlock from '../components/Main/TextBlock'
+import Tuber from '../components/Main/Tuber'
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <>
       <Clouds />

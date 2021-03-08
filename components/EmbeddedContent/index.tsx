@@ -14,7 +14,7 @@ export default function EmbeddedContent({
   frameBorder = '0',
   src,
   title,
-}: EmbeddedContentProps) {
+}: EmbeddedContentProps): JSX.Element {
   const afs = allowFullScreen ? { allowFullScreen: true } : {}
 
   return (

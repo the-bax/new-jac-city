@@ -4,6 +4,6 @@ export type MainProps = {
   children?: React.ReactNode
 }
 
-export default function Main({ children }: MainProps) {
+export default function Main({ children }: MainProps): JSX.Element {
   return <main className={style.main}>{children}</main>
 }
