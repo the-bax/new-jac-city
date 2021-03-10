@@ -42,6 +42,5 @@ module.exports = {
     // NextJs specific fix: allow jsx syntax in js files
     'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }], //should add ".ts" if typescript project
     'react/display-name': 1,
-    // 'no-unused-vars': 'error',
   },
 }

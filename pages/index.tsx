@@ -24,18 +24,14 @@ export default function Home(): JSX.Element {
       <Main>
         <Section>
           <TextBlock>
-            <h2 id="a-gathering">
-              <a className="return" href="#">
-                About the album
-              </a>
-            </h2>
+            <h2 id="a-gathering">About the album</h2>
             <p>
               Featuring material from their 2017 collaboration with Korean quartet Black String, plus a swathe of brand
               new original compositions, A Gathering encapsulates a milestone in their sound. Recorded at Roundhead
               Studios in Auckland, it is a beautifully produced illustration of a band at the height of its powers;
               showcasing their intricate and immersive compositions; tight ensemble playing, and assertive, individual
               improvising voices. Two of the tracks from the album, “Beyond the Palace” and “A Gathering” were nominated
-              for the APRA NZ Best Jazz Composition of the Year Award in 2018, and a third, "Tui", won the same award in
+              for the APRA NZ Best Jazz Composition of the Year Award in 2018, and a third, “Tui”, won the same award in
               2020.
             </p>
             <p>
@@ -49,11 +45,7 @@ export default function Home(): JSX.Element {
         <Rule />
         <Section>
           <TextBlock>
-            <h2 id="about-the-jac">
-              <a className="return" href="#">
-                About The Jac
-              </a>
-            </h2>
+            <h2 id="about-the-jac">About The Jac</h2>
             <p>
               Since 2010 the 8-piece ensemble The Jac has been a leading voice in the New Zealand jazz scene, pushing a
               modern sound with their distinctive, through-composed compositions, tight ensemble playing and impressive
