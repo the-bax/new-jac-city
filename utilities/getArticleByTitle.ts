@@ -1,10 +1,12 @@
+import { APPLICATION_JSON, CONTENTFUL_API_ACCESS_TOKEN, CONTENTFUL_API_URL, POST } from './constants'
+
 export type Article = {
   title: string
   content: string
 }
 
 export default async function getArticleByTitle(title: string): Promise<Article> {
-  const query = `
+  const GET_ARTICLE_BY_TITLE_QUERY = `
     {
       articleCollection(where: {title: "${title}"}) {
         items {
@@ -14,17 +16,16 @@ export default async function getArticleByTitle(title: string): Promise<Article>
       }
     }
   `
-  const res = await fetch(`https://graphql.contentful.com/content/v1/spaces/zqvr29h6rh51/`, {
-    method: 'POST',
+
+  const res = await fetch(CONTENTFUL_API_URL, {
+    method: POST,
     headers: {
-      'Content-Type': 'application/json',
-      Authorization: 'Bearer qVGC4H5ZmObAQMKyniPJNtNjtGkfmhi_OgVVy9jmtR8',
+      'Content-Type': APPLICATION_JSON,
+      Authorization: CONTENTFUL_API_ACCESS_TOKEN,
     },
-    body: JSON.stringify({ query }),
+    body: JSON.stringify({ query: GET_ARTICLE_BY_TITLE_QUERY }),
   })
-
   const { data } = await res.json()
-
   // articleCollection can only contains zero or one article. Since title is an unique field.
   const article: Article = data.articleCollection.items[0]
 

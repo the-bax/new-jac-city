@@ -8,14 +8,17 @@ export type ContentfulProps = {
 export default function Contentful({ article }: ContentfulProps): JSX.Element {
   return (
     <>
-      <div>{article.title}</div>
-      <div>{article.content}</div>
+      <h2>{article.title}</h2>
+      <p>{article.content}</p>
     </>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const article = await getArticleByTitle('JS')
+  const ARTICLE_TITLE = 'JS'
+
+  const article: Article = await getArticleByTitle(ARTICLE_TITLE)
+
   return {
     props: {
       article,
