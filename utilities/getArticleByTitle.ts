@@ -24,7 +24,7 @@ export default async function getArticleByTitle(title: string): Promise<Article>
   })
 
   const { data } = await res.json()
-  console.log(data.articleCollection)
+
   // articleCollection can only contains zero or one article. Since title is an unique field.
   const article: Article = data.articleCollection.items[0]
 

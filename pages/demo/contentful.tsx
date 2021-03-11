@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next'
-import getArticleByTitle, { Article } from './utilities/getArticleByTitle'
+import getArticleByTitle, { Article } from '../../utilities/getArticleByTitle'
 
 export type ContentfulProps = {
   article: Article
