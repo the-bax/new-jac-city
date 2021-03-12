@@ -1,4 +1,4 @@
-import { APPLICATION_JSON, CONTENTFUL_API_ACCESS_TOKEN, CONTENTFUL_API_URL, POST } from './constants'
+import { APPLICATION_JSON, CONTENTFUL_API_ACCESS_TOKEN, CONTENTFUL_API_URL, POST } from '../constants'
 
 export type Article = {
   title: string
