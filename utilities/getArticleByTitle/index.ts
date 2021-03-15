@@ -6,7 +6,7 @@ export type Article = {
 }
 
 export default async function getArticleByTitle(title: string): Promise<Article> {
-  const GET_ARTICLE_BY_TITLE_QUERY = `
+  const GET_ARTICLE_BY_TITLE_GRAPHQL_QUERY = `
     {
       articleCollection(where: {title: "${title}"}) {
         items {
@@ -23,7 +23,7 @@ export default async function getArticleByTitle(title: string): Promise<Article>
       'Content-Type': APPLICATION_JSON,
       Authorization: CONTENTFUL_API_ACCESS_TOKEN,
     },
-    body: JSON.stringify({ query: GET_ARTICLE_BY_TITLE_QUERY }),
+    body: JSON.stringify({ query: GET_ARTICLE_BY_TITLE_GRAPHQL_QUERY }),
   })
   const { data } = await res.json()
   // articleCollection can only contains zero or one article. Since title is an unique field.
