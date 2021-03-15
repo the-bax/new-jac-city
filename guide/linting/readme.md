@@ -8,7 +8,7 @@ added the alias to your shell):
 
 ```json
 "scripts": {
-  "lint": "eslint --ignore-path .gitignore --ext ts,tsx --fix"
+  "lint": "eslint . --ignore-path .gitignore --ext .js,.ts,.tsx --fix"
 }
 ```
 
@@ -23,10 +23,10 @@ pnpm format
 pnpm test:local
 ```
 
-Our `eslintrc.ts` file currently looks like this:
+Our `.eslintrc.js` file currently looks like this:
 
-```ts
-export default {
+```js
+module.exports = {
   env: {
     browser: true,
     commonjs: true,
@@ -76,5 +76,5 @@ export default {
 No code should be commited with ESLint errors. If possible, all ESLint warnings should also be addressed before
 committing code.
 
-Do not change the `eslintrc.js` configuration without first gaining team consensus. As with the formatter, this ensures
+Do not change the `.eslintrc.js` configuration without first gaining team consensus. As with the formatter, this ensures
 consistent quality code across the team, helping to prevent bugs, security holes, etc.

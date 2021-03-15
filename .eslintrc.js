@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   env: {
     browser: true,
     commonjs: true,
@@ -13,6 +13,7 @@ export default {
     'plugin:react/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'plugin:import/typescript',
     'plugin:jsx-a11y/recommended',
     'plugin:react-hooks/recommended',
     'prettier',
