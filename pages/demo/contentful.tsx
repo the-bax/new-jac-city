@@ -1,27 +1,18 @@
-import getArticleByTitle, { Article } from '../../utilities/getArticleByTitle'
+import Article, { ArticleProps } from '../../components/Article'
+import getArticleByTitle from '../../utilities/getArticleByTitle'
 import { GetStaticProps } from 'next'
+import React from 'react'
 
-export type ContentfulProps = {
-  article: Article
-}
-
-export default function Contentful({ article }: ContentfulProps): JSX.Element {
-  return (
-    <>
-      <h2>{article.title}</h2>
-      <p>{article.content}</p>
-    </>
-  )
+export default function Contentful({ title, content }: ArticleProps): JSX.Element {
+  return <Article title={title} content={content} />
 }
 
 export const getStaticProps: GetStaticProps = async () => {
   const ARTICLE_TITLE = 'JS'
 
-  const article: Article = await getArticleByTitle(ARTICLE_TITLE)
+  const article: ArticleProps = await getArticleByTitle(ARTICLE_TITLE)
 
   return {
-    props: {
-      article,
-    },
+    props: article,
   }
 }
