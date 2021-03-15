@@ -8,7 +8,7 @@
     "format": "prettier --ignore-path .gitignore --write '**/*.{ts,tsx}'",
     "lint": "eslint . --ignore-path .gitignore --ext .js,.ts,.tsx --fix",
     "start": "next start",
-    "test:local": "jest --passWithNoTests",
+    "test:local": "jest",
     "prepare": "husky install"
   },
   "devDependencies": {
