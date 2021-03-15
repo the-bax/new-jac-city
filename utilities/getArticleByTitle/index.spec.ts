@@ -1,16 +1,14 @@
-import 'whatwg-fetch'
+import { CONTENTFUL_API_URL } from '../constants'
+import getArticleByTitle, { Article } from './index'
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
-import getArticleByTitle, { Article } from './index'
-import { CONTENTFUL_API_URL } from '../constants'
+import 'whatwg-fetch'
 
 const mockTitle = 'mock title'
-
 const article: Article = {
   title: mockTitle,
   content: 'mock content',
 }
-
 const server = setupServer(
   rest.post(CONTENTFUL_API_URL, (req, res, ctx) => {
     return res(
