@@ -1,7 +1,7 @@
 import { APPLICATION_JSON, CONTENTFUL_API_ACCESS_TOKEN, CONTENTFUL_API_URL, POST } from '../constants'
 import { ArticleProps } from '../../components/Article'
 
-export default async function getArticleByTitle(title: string): Promise<Article> {
+export default async function getArticleByTitle(title: string): Promise<ArticleProps> {
   const GET_ARTICLE_BY_TITLE_GRAPHQL_QUERY = `
     {
       articleCollection(where: {title: "${title}"}) {

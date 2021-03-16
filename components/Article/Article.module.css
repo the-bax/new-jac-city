@@ -1,0 +1,14 @@
+.box {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+  margin: 2rem;
+}
+
+.content {
+  text-align: center;
+  font-size: 1.5rem;
+}

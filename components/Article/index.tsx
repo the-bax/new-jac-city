@@ -1,4 +1,4 @@
-// import style from './Article.module.css'
+import style from './Article.module.css'
 
 export type ArticleProps = {
   title: string
@@ -7,9 +7,9 @@ export type ArticleProps = {
 
 export default function Article({ title, content }: ArticleProps): JSX.Element {
   return (
-    <>
-      <h2>{title}</h2>
-      <p>{content}</p>
-    </>
+    <main className={style.box}>
+      <h1 className={style.title}>{title}</h1>
+      <p className={style.content}>{content}</p>
+    </main>
   )
 }

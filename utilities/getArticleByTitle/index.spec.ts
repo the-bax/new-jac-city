@@ -1,4 +1,4 @@
-import { ArticleProps as Article } from '../../components/Article'
+import { ArticleProps } from '../../components/Article'
 import { CONTENTFUL_API_URL } from '../constants'
 import getArticleByTitle from './index'
 import { rest } from 'msw'
@@ -6,7 +6,7 @@ import { setupServer } from 'msw/node'
 import 'whatwg-fetch'
 
 const mockTitle = 'mock title'
-const article: Article = {
+const article: ArticleProps = {
   title: mockTitle,
   content: 'mock content',
 }
