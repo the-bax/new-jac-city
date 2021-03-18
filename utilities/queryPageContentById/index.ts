@@ -1,4 +1,4 @@
-import { CONTENTFUL_API_ACCESS_TOKEN, CONTENTFUL_API_URL } from '../constants'
+import { CONTENTFUL_API_ACCESS_TOKEN, CONTENTFUL_API_URL, HttpRequestMethod } from '../constants'
 import type { PageContentProps } from '../../components/Main/PageContent'
 
 export default async function queryPageContentById(id: string): Promise<PageContentProps> {
@@ -16,7 +16,7 @@ export default async function queryPageContentById(id: string): Promise<PageCont
   const variables = { id }
 
   const res = await fetch(CONTENTFUL_API_URL, {
-    method: 'POST',
+    method: HttpRequestMethod.POST,
     headers: {
       'Content-Type': 'application/json',
       Authorization: CONTENTFUL_API_ACCESS_TOKEN,
