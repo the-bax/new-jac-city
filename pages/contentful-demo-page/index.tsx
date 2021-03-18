@@ -1,4 +1,4 @@
-import getPageContentByTitle from '../../utilities/getPageContentByTitle'
+import queryPageContentById from '../../utilities/queryPageContentById'
 import { GetStaticProps } from 'next'
 import PageContent from '../../components/Main/PageContent'
 import type { PageContentProps } from '../../components/Main/PageContent'
@@ -9,11 +9,8 @@ export default function Contentful({ title, content }: PageContentProps): JSX.El
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const PAGE_CONTENT_TITLE = 'JS'
+  const JS_PAGE_CONTENT_ID = '6pGkzTAVHrgYr08jsTTvq6'
+  const pageContent: PageContentProps = await queryPageContentById(JS_PAGE_CONTENT_ID)
 
-  const pageContent: PageContentProps = await getPageContentByTitle(PAGE_CONTENT_TITLE)
-
-  return {
-    props: pageContent,
-  }
+  return { props: pageContent }
 }

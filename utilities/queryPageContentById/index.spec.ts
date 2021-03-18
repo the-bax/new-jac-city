@@ -1,13 +1,12 @@
 import { CONTENTFUL_API_URL } from '../constants'
-import getPageContentByTitle from './index'
+import queryPageContentById from './index'
 import type { PageContentProps } from '../../components/Main/PageContent'
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
 import 'whatwg-fetch'
 
-const mockTitle = 'mock title'
 const pageContent: PageContentProps = {
-  title: mockTitle,
+  title: 'mock title',
   content: 'mock content',
 }
 const server = setupServer(
@@ -15,9 +14,7 @@ const server = setupServer(
     return res(
       ctx.json({
         data: {
-          articleCollection: {
-            items: [pageContent],
-          },
+          pageContent,
         },
       }),
     )
@@ -28,6 +25,6 @@ beforeAll(() => server.listen({ onUnhandledRequest: 'error' }))
 afterAll(() => server.close())
 afterEach(() => server.resetHandlers())
 
-test('get page content by title', async () => {
-  expect(await getPageContentByTitle(mockTitle)).toMatchObject(pageContent)
+test('get page content by id', async () => {
+  expect(await queryPageContentById('mockId')).toMatchObject(pageContent)
 })
