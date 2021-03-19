@@ -1,8 +1,8 @@
 import style from './PageContent.module.css'
 
 export type PageContentProps = {
-  title: string
   content: string
+  title: string
 }
 
 export default function PageContent({ title, content }: PageContentProps): JSX.Element {
