@@ -6,8 +6,8 @@ import { setupServer } from 'msw/node'
 import 'whatwg-fetch'
 
 const pageContent: PageContentProps = {
-  title: 'mock title',
   content: 'mock content',
+  title: 'mock title',
 }
 const server = setupServer(
   rest.post(CONTENTFUL_API_URL, (req, res, ctx) => {

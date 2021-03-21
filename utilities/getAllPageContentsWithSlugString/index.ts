@@ -20,8 +20,8 @@ export default async function getAllPageContentsWithSlugString(): Promise<PageCo
   const res = await fetch(CONTENTFUL_API_URL, {
     method: HttpRequestMethod.POST,
     headers: {
-      'Content-Type': 'application/json',
       Authorization: CONTENTFUL_API_ACCESS_TOKEN,
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       operationName,

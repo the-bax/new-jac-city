@@ -1,11 +1,11 @@
 import { CONTENTFUL_API_URL } from '../constants'
-import getAllPageContentsWithSlug from './index'
-import type { PageContentsWithSlug } from './index'
+import getAllPageContentsWithSlugString from './index'
+import type { PageContentsWithSlugString } from './index'
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
 import 'whatwg-fetch'
 
-const allPageContentsWithSlug: PageContentsWithSlug[] = [
+const allPageContentsWithSlug: PageContentsWithSlugString[] = [
   {
     slugString: 'demo/js',
   },
@@ -33,5 +33,5 @@ afterAll(() => server.close())
 afterEach(() => server.resetHandlers())
 
 test('get page content by id', async () => {
-  expect(await getAllPageContentsWithSlug()).toMatchObject(allPageContentsWithSlug)
+  expect(await getAllPageContentsWithSlugString()).toMatchObject(allPageContentsWithSlug)
 })
