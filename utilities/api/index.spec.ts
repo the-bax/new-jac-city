@@ -25,7 +25,6 @@ const server = setupServer(
     let items
 
     // todo: use mock graphql
-    console.log(query)
     switch (true) {
       case /{\s*slugString\s*}/.test(query):
         items = allPageContentsWithSlug

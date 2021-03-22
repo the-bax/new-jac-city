@@ -2,22 +2,11 @@ import { CONTENTFUL_API_ACCESS_TOKEN, CONTENTFUL_API_URL, HttpRequestMethod } fr
 import type { PageContentProps } from '../../components/Main/PageContent'
 import type { PageContentsWithSlugString } from '../../pages/[[...slug]]'
 
-type EmptyObject = Record<string, never>
-type CollectionVariables = EmptyObject
-type Id = { id: string }
-type SlugString = { slugString: string }
-type ItemVariables = SlugString | Id
-type Data<T> = T extends ItemVariables
-  ? { pageContentCollection: { items: [PageContentProps] } }
-  : T extends CollectionVariables
-  ? { pageContentCollection: { items: PageContentsWithSlugString[] } }
-  : never
+type ItemData = { pageContentCollection: { items: [PageContentProps] } }
+type CollectionData = { pageContentCollection: { items: PageContentsWithSlugString[] } }
+type Data = ItemData | CollectionData
 
-async function fetchGraphQl<T extends CollectionVariables | ItemVariables>(
-  operationName: string,
-  query: string,
-  variables: T,
-): Promise<Data<T>> {
+async function fetchGraphQl(operationName: string, query: string): Promise<Data> {
   const res = await fetch(CONTENTFUL_API_URL, {
     method: HttpRequestMethod.POST,
     headers: {
@@ -27,41 +16,37 @@ async function fetchGraphQl<T extends CollectionVariables | ItemVariables>(
     body: JSON.stringify({
       operationName,
       query,
-      variables,
     }),
   })
 
-  // todo: move to extractXxx method
-  const { data }: { data: Data<T> } = await res.json()
+  const { data }: { data: Data } = await res.json()
 
   return data
 }
 
-function extractPageContent(data: Data<ItemVariables>): PageContentProps {
-  return data?.pageContentCollection?.items[0]
+function extractPageContent(data: ItemData): PageContentProps {
+  return data.pageContentCollection?.items?.[0]
 }
 
 export async function getPageContentBySlugString(slugString: string): Promise<PageContentProps> {
   const operationName = 'PageContentBySlugString'
   const query = `
-    query ${operationName}($slugString: String!) {
-      pageContentCollection(where: {slugString: $slugString}) {
+    query ${operationName} {
+      pageContentCollection(where: {slugString: "${slugString}"}) {
         items {
           content
           title
         }
       }
     }
-  `
-  const variables: SlugString = { slugString }
-
-  const data: Data<ItemVariables> = await fetchGraphQl(operationName, query, variables)
+    `
+  const data: ItemData = <ItemData>await fetchGraphQl(operationName, query)
 
   return extractPageContent(data)
 }
 
-function extractAllPageContents(data: Data<CollectionVariables>): PageContentsWithSlugString[] {
-  return data?.pageContentCollection?.items
+function extractAllPageContents(data: CollectionData): PageContentsWithSlugString[] {
+  return data.pageContentCollection?.items
 }
 
 export async function getAllPageContentsWithSlugString(): Promise<PageContentsWithSlugString[]> {
@@ -75,9 +60,8 @@ export async function getAllPageContentsWithSlugString(): Promise<PageContentsWi
       }
     }
   `
-  const variables = {}
 
-  const data: Data<CollectionVariables> = await fetchGraphQl(operationName, query, variables)
+  const data: Data = <CollectionData>await fetchGraphQl(operationName, query)
 
   return extractAllPageContents(data)
 }
