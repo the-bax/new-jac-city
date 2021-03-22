@@ -1,11 +1,12 @@
-import getAllPageContentsWithSlugString from '../../utilities/getAllPageContentsWithSlugString'
-import getPageContentBySlugString from '../../utilities/getPageContentBySlugString'
+import { getAllPageContentsWithSlugString, getPageContentBySlugString } from '../../utilities/api'
 import type { GetStaticPaths, GetStaticProps } from 'next'
 import PageContent from '../../components/Main/PageContent'
 import type { PageContentProps } from '../../components/Main/PageContent'
-import type { PageContentsWithSlugString } from '../../utilities/getAllPageContentsWithSlugString'
 import React from 'react'
 
+export type PageContentsWithSlugString = {
+  slugString: string
+}
 type SitePageProps = {
   pageContent: PageContentProps
 }
@@ -17,9 +18,7 @@ export default function SitePage({ pageContent }: SitePageProps): JSX.Element {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   let slugString: string
 
-  if (params?.slug) {
-    // params.slug = [ 'demo', 'js' ]
-    // slugString = 'demo/js'
+  if (params?.slug as string[]) {
     slugString = (params?.slug as string[]).join('/')
   } else slugString = 'index'
 
@@ -29,10 +28,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // allPageContentsWithSlugString = [ { slugString: 'demo/js' }, { slugString: 'demo/python' } ]
+  type Path = { params: { slug: string[] } }
+
   const allPageContentsWithSlugString: PageContentsWithSlugString[] = await getAllPageContentsWithSlugString()
-  // paths: [{ params: { slug: ['demo', 'js'] } }, { params: { slug: ['demo', 'python'] } }],
-  let paths = allPageContentsWithSlugString.map(({ slugString }) => ({ params: { slug: slugString.split('/') } }))
+  let paths: Path[] = allPageContentsWithSlugString.map(({ slugString }) => ({
+    params: { slug: slugString.split('/') },
+  }))
   // add the index page path
   paths = paths.concat({ params: { slug: [] } })
 
