@@ -28,7 +28,7 @@ function extractPageContent(data: ItemData): PageContentProps {
   return data.pageContentCollection?.items?.[0]
 }
 
-export async function getPageContentBySlugString(slugString: string): Promise<PageContentProps> {
+export async function getPageContentBySlugString(slugString: string): Promise<PageContentProps | undefined> {
   const operationName = 'PageContentBySlugString'
   const query = `
     query ${operationName} {
@@ -49,7 +49,7 @@ function extractAllPageContents(data: CollectionData): PageContentsWithSlugStrin
   return data.pageContentCollection?.items
 }
 
-export async function getAllPageContentsWithSlugString(): Promise<PageContentsWithSlugString[]> {
+export async function getAllPageContentsWithSlugString(): Promise<PageContentsWithSlugString[] | []> {
   const operationName = 'PageContentsSlugArray'
   const query = `
     query ${operationName} {
