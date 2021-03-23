@@ -1,39 +1,39 @@
 import { CONTENTFUL_API_URL } from './constants'
-import { getAllPageContentsWithSlugString, getPageContentBySlugString } from './index'
+import { getAllPathnames, getPageContentByPathname } from './'
 import type { PageContentProps } from '../../components/Main/PageContent'
-import type { PageContentsWithSlugString } from '../../pages/[[...slug]]'
+import type { Pathname } from './'
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
 import 'whatwg-fetch'
 
-const pageContent: PageContentProps = {
+const mockAllPathnames: Pathname[] = [
+  {
+    pathname: 'demo/js',
+  },
+  {
+    pathname: 'demo/python',
+  },
+]
+const mockPageContent: PageContentProps = {
   content: 'mock content',
   title: 'mock title',
 }
-const allPageContentsWithSlug: PageContentsWithSlugString[] = [
-  {
-    slugString: 'demo/js',
-  },
-  {
-    slugString: 'demo/python',
-  },
-]
 
+// todo: use mock graphql
 const server = setupServer(
   rest.post(CONTENTFUL_API_URL, (req, res, ctx) => {
-    const query = (req?.body as Record<string, string>)?.query
-    let items
+    const query = (req.body as Record<string, string>).query
+    let items: PageContentProps[] | Pathname[]
 
-    // todo: use mock graphql
     switch (true) {
-      case /{\s*slugString\s*}/.test(query):
-        items = allPageContentsWithSlug
-        break
       case /{\s*content\s*title\s*}/.test(query):
-        items = [pageContent]
+        items = [mockPageContent]
+        break
+      case /{\s*pathname\s*}/.test(query):
+        items = mockAllPathnames
         break
       default:
-        throw 'Error'
+        throw 'Query cannot be executed.'
     }
 
     return res(
@@ -51,10 +51,10 @@ beforeAll(() => server.listen({ onUnhandledRequest: 'error' }))
 afterAll(() => server.close())
 afterEach(() => server.resetHandlers())
 
-test('get page content by slug string', async () => {
-  expect(await getPageContentBySlugString('mockSlugString')).toMatchObject(pageContent)
+test('get all pathnames', async () => {
+  expect(await getAllPathnames()).toMatchObject(mockAllPathnames)
 })
 
-test('get page contents with slug string', async () => {
-  expect(await getAllPageContentsWithSlugString()).toMatchObject(allPageContentsWithSlug)
+test('get page content by pathname', async () => {
+  expect(await getPageContentByPathname('mockPathname')).toMatchObject(mockPageContent)
 })

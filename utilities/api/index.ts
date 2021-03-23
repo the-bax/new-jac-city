@@ -1,10 +1,10 @@
 import { CONTENTFUL_API_ACCESS_TOKEN, CONTENTFUL_API_URL, HttpRequestMethod } from './constants'
 import type { PageContentProps } from '../../components/Main/PageContent'
-import type { PageContentsWithSlugString } from '../../pages/[[...slug]]'
 
+type CollectionData = { pageContentCollection: { items: Pathname[] } }
 type ItemData = { pageContentCollection: { items: [PageContentProps] } }
-type CollectionData = { pageContentCollection: { items: PageContentsWithSlugString[] } }
-type Data = ItemData | CollectionData
+type Data = CollectionData | ItemData
+export type Pathname = { pathname: string }
 
 async function fetchGraphQl(operationName: string, query: string): Promise<Data> {
   const res = await fetch(CONTENTFUL_API_URL, {
@@ -24,15 +24,28 @@ async function fetchGraphQl(operationName: string, query: string): Promise<Data>
   return data
 }
 
-function extractPageContent(data: ItemData): PageContentProps {
-  return data.pageContentCollection?.items?.[0]
-}
-
-export async function getPageContentBySlugString(slugString: string): Promise<PageContentProps | undefined> {
-  const operationName = 'PageContentBySlugString'
+export async function getAllPathnames(): Promise<Pathname[] | []> {
+  const operationName = 'GetAllPathnames'
   const query = `
     query ${operationName} {
-      pageContentCollection(where: {slugString: "${slugString}"}) {
+      pageContentCollection {
+        items {
+          pathname
+        }
+      }
+    }
+  `
+
+  const data: Data = (await fetchGraphQl(operationName, query)) as CollectionData
+
+  return data.pageContentCollection.items
+}
+
+export async function getPageContentByPathname(pathname: string): Promise<PageContentProps | undefined> {
+  const operationName = 'GetPageContentByPathname'
+  const query = `
+    query ${operationName} {
+      pageContentCollection(where: {pathname: "${pathname}"}) {
         items {
           content
           title
@@ -42,26 +55,5 @@ export async function getPageContentBySlugString(slugString: string): Promise<Pa
     `
   const data: ItemData = <ItemData>await fetchGraphQl(operationName, query)
 
-  return extractPageContent(data)
-}
-
-function extractAllPageContents(data: CollectionData): PageContentsWithSlugString[] {
-  return data.pageContentCollection?.items
-}
-
-export async function getAllPageContentsWithSlugString(): Promise<PageContentsWithSlugString[] | []> {
-  const operationName = 'PageContentsSlugArray'
-  const query = `
-    query ${operationName} {
-      pageContentCollection {
-        items {
-          slugString
-        }
-      }
-    }
-  `
-
-  const data: Data = <CollectionData>await fetchGraphQl(operationName, query)
-
-  return extractAllPageContents(data)
+  return data.pageContentCollection.items?.[0]
 }
