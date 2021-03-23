@@ -1,35 +1,30 @@
-import { getAllPathnames, getPageContentByPathname } from '../../utilities/api'
-import type { GetStaticPaths, GetStaticProps } from 'next'
+import * as React from 'react'
+import getPageContentByPathname from '../../api/getPageContentByPathname'
+import listPagePaths from '../../api/listPagePaths'
 import PageContent from '../../components/Main/PageContent'
-import type { PageContentProps } from '../../components/Main/PageContent'
-import React from 'react'
-import type { Pathname } from '../../utilities/api'
-
-type SitePageProps = {
-  pageContent: PageContentProps
-}
+import type { Path } from '../../api/types'
+import type { PageParams, PagePath, SitePageProps, StaticPaths, StaticProps } from '../_types'
 
 export default function SitePage({ pageContent }: SitePageProps): JSX.Element {
   return <PageContent content={pageContent.content} title={pageContent.title} />
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const pathname: string = (params?.slug as string[])?.join('/') ?? 'index'
+export const getStaticProps = async ({ params: { slug } }: PageParams): Promise<StaticProps> => {
+  const pathname: string = slug?.join('/') ?? 'index'
   const pageContent = await getPageContentByPathname(pathname)
 
   return { props: { pageContent } }
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  type ParamWithSlug = { params: { slug: string[] } }
-
-  const allPathnames = (await getAllPathnames()) as Pathname[]
-  const paths: ParamWithSlug[] = allPathnames.map(({ pathname }) => ({
-    params: { slug: pathname !== 'index' ? pathname.split('/') : [] },
-  }))
+export const getStaticPaths = async (): Promise<StaticPaths> => {
+  const pagePaths: Path[] = await listPagePaths()
 
   return {
     fallback: false,
-    paths,
+    paths: pagePaths.map<PagePath>(({ pathname }) => ({
+      params: {
+        slug: pathname === 'index' ? [] : pathname.split('/'),
+      },
+    })),
   }
 }
