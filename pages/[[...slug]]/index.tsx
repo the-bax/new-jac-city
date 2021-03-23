@@ -16,13 +16,8 @@ export default function SitePage({ pageContent }: SitePageProps): JSX.Element {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  let slugString: string
-
-  if (params?.slug as string[]) {
-    slugString = (params?.slug as string[]).join('/')
-  } else slugString = 'index'
-
-  const pageContent: PageContentProps = await getPageContentBySlugString(slugString)
+  const slugString: string = (params?.slug as string[])?.join('/') ?? 'index'
+  const pageContent = (await getPageContentBySlugString(slugString)) as PageContentProps
 
   return { props: { pageContent } }
 }
@@ -31,11 +26,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
   type Path = { params: { slug: string[] } }
 
   const allPageContentsWithSlugString: PageContentsWithSlugString[] = await getAllPageContentsWithSlugString()
-  let paths: Path[] = allPageContentsWithSlugString.map(({ slugString }) => ({
-    params: { slug: slugString.split('/') },
-  }))
-  // add the index page path
-  paths = paths.concat({ params: { slug: [] } })
+  const paths: Path[] = [
+    ...allPageContentsWithSlugString.map(({ slugString }) => ({
+      params: { slug: slugString.split('/') },
+    })),
+    { params: { slug: [] } },
+  ]
 
   return {
     fallback: false,
