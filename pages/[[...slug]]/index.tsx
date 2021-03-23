@@ -24,12 +24,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   type ParamWithSlug = { params: { slug: string[] } }
 
   const allPathnames = (await getAllPathnames()) as Pathname[]
-  const paths: ParamWithSlug[] = [
-    ...allPathnames.map(({ pathname }) => ({
-      params: { slug: pathname.split('/') },
-    })),
-    { params: { slug: [] } },
-  ]
+  const paths: ParamWithSlug[] = allPathnames.map(({ pathname }) => ({
+    params: { slug: pathname !== 'index' ? pathname.split('/') : [] },
+  }))
 
   return {
     fallback: false,

@@ -53,6 +53,7 @@ export async function getPageContentByPathname(pathname: string): Promise<PageCo
       }
     }
     `
+
   const data: ItemData = <ItemData>await fetchGraphQl(operationName, query)
 
   return data.pageContentCollection.items?.[0]
