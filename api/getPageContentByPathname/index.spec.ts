@@ -1,8 +1,8 @@
-import getPageContentByPathname from './';
-import { CONTENTFUL_API_URL } from '../constants';
-import { rest } from 'msw';
-import { setupServer } from 'msw/node';
-import 'whatwg-fetch';
+import getPageContentByPathname from './'
+import { CONTENTFUL_API_URL } from '../constants'
+import { rest } from 'msw'
+import { setupServer } from 'msw/node'
+import 'whatwg-fetch'
 import type { PageContentProps } from '../../components/Main/PageContent'
 
 const mockPageContent: PageContentProps = {
@@ -10,7 +10,6 @@ const mockPageContent: PageContentProps = {
   title: 'mock title',
 }
 
-// todo: use mock graphql
 const server = setupServer(
   rest.post(CONTENTFUL_API_URL, (_, res, ctx) => {
     const items: PageContentProps[] = [mockPageContent]
