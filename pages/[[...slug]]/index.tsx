@@ -3,7 +3,7 @@ import getPageContentByPathname from '../../api/getPageContentByPathname'
 import listPagePaths from '../../api/listPagePaths'
 import PageContent from '../../components/Main/PageContent'
 import type { Path } from '../../api/types'
-import type { PageParams, PagePath, SitePageProps, StaticPaths, StaticProps } from '../_types'
+import type { PageParams, SitePageProps, StaticPaths, StaticProps } from '../_types'
 
 export default function SitePage({ pageContent }: SitePageProps): JSX.Element {
   return <PageContent content={pageContent.content} title={pageContent.title} />
@@ -21,9 +21,9 @@ export const getStaticPaths = async (): Promise<StaticPaths> => {
 
   return {
     fallback: false,
-    paths: pagePaths.map<PagePath>(({ pathname }) => ({
+    paths: pagePaths.map<PageParams>(({ pathname }) => ({
       params: {
-        slug: pathname === 'index' ? [] : pathname.split('/'),
+        slug: pathname === 'index' ? undefined : pathname.split('/'),
       },
     })),
   }

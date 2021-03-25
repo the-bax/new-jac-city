@@ -6,7 +6,7 @@ export type SitePageProps = {
 
 export type PageParams = {
   params: {
-    slug: string[]
+    slug?: string[]
   }
 }
 
@@ -16,13 +16,7 @@ export type StaticProps = {
   }
 }
 
-export type PagePath = {
-  params: {
-    slug: string[]
-  }
-}
-
 export type StaticPaths = {
   fallback: boolean
-  paths: PagePath[]
+  paths: PageParams[]
 }
