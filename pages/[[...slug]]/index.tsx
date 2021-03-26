@@ -2,11 +2,28 @@ import * as React from 'react'
 import getPageContentByPathname from '../../api/getPageContentByPathname'
 import listPagePaths from '../../api/listPagePaths'
 import PageContent from '../../components/Main/PageContent'
+import type { PageContentProps } from '../../components/Main/PageContent'
 import type { Path } from '../../api/types'
-import type { PageParams, SitePageProps, StaticPaths, StaticProps } from '../_types'
 
-export default function SitePage({ pageContent }: SitePageProps): JSX.Element {
-  return <PageContent content={pageContent.content} title={pageContent.title} />
+export type SitePageProps = {
+  pageContent: PageContentProps
+}
+
+export type PageParams = {
+  params: {
+    slug?: string[]
+  }
+}
+
+export type StaticProps = {
+  props: {
+    pageContent?: Record<string, string>
+  }
+}
+
+export type StaticPaths = {
+  fallback: boolean
+  paths: PageParams[]
 }
 
 export const getStaticProps = async ({ params: { slug } }: PageParams): Promise<StaticProps> => {
@@ -27,4 +44,8 @@ export const getStaticPaths = async (): Promise<StaticPaths> => {
       },
     })),
   }
+}
+
+export default function SitePage({ pageContent }: SitePageProps): JSX.Element {
+  return <PageContent content={pageContent.content} title={pageContent.title} />
 }
