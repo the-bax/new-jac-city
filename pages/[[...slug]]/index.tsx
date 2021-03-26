@@ -2,29 +2,8 @@ import * as React from 'react'
 import getPageContentByPathname from '../../api/getPageContentByPathname'
 import listPagePaths from '../../api/listPagePaths'
 import PageContent from '../../components/Main/PageContent'
-import type { PageContentProps } from '../../components/Main/PageContent'
 import type { Path } from '../../api/types'
-
-export type SitePageProps = {
-  pageContent: PageContentProps
-}
-
-export type PageParams = {
-  params: {
-    slug?: string[]
-  }
-}
-
-export type StaticProps = {
-  props: {
-    pageContent?: Record<string, string>
-  }
-}
-
-export type StaticPaths = {
-  fallback: boolean
-  paths: PageParams[]
-}
+import type { PageParams, SitePageProps, StaticProps, StaticPaths } from '../../types'
 
 export const getStaticProps = async ({ params: { slug } }: PageParams): Promise<StaticProps> => {
   const pathname: string = slug?.join('/') ?? 'index'
