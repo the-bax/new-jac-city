@@ -7,3 +7,8 @@ export enum HttpRequestMethod {
   DELETE = 'DELETE',
   PUT = 'PUT',
 }
+
+export const headers = {
+  Authorization: CONTENTFUL_API_ACCESS_TOKEN,
+  'Content-Type': 'application/json',
+}
