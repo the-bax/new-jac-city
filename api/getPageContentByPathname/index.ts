@@ -1,4 +1,5 @@
-import { CONTENTFUL_API_URL, headers, HttpRequestMethod } from '../constants'
+import { CONTENTFUL_API_URL, headers } from '../constants'
+import { HttpRequestMethod } from '../types'
 import type { PageContentProps } from '../../components/Main/PageContent'
 
 export default async function getPageContentByPathname(pathname: string): Promise<PageContentProps | undefined> {

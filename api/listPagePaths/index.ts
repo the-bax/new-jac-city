@@ -1,4 +1,5 @@
-import { CONTENTFUL_API_URL, headers, HttpRequestMethod } from '../constants'
+import { CONTENTFUL_API_URL, headers } from '../constants'
+import { HttpRequestMethod } from '../types'
 import type { Path } from '../types'
 
 export default async function listPagePaths(): Promise<Path[]> {
