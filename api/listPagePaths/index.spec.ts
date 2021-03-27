@@ -5,33 +5,51 @@ import { setupServer } from 'msw/node'
 import 'whatwg-fetch'
 import type { Path } from '../types'
 
-const mockAllPaths: Path[] = [
-  {
-    pathname: 'demo/js',
-  },
-  {
-    pathname: 'demo/python',
-  },
-]
+it('should list page paths', async () => {
+  const mockAllPaths: Path[] = [
+    {
+      pathname: 'demo/js',
+    },
+    {
+      pathname: 'demo/python',
+    },
+  ]
 
-const handler = graphql.query(LIST_PAGE_PATHS, (_, res, ctx) => {
-  const items: Path[] = mockAllPaths
+  const handler = graphql.query(LIST_PAGE_PATHS, (_, res, ctx) => {
+    const items: Path[] = mockAllPaths
 
-  return res(
-    ctx.data({
-      pageContentCollection: {
-        items,
-      },
-    }),
-  )
-})
+    return res(
+      ctx.data({
+        pageContentCollection: {
+          items,
+        },
+      }),
+    )
+  })
 
-const server = setupServer(handler)
+  const server = setupServer(handler)
 
-test('list page paths', async () => {
   server.listen({ onUnhandledRequest: 'error' })
 
   expect(await listPagePaths()).toMatchObject(mockAllPaths)
+
+  server.close()
+})
+
+it('should get an empty list page paths array', async () => {
+  const handler = graphql.query(LIST_PAGE_PATHS, (_, res, ctx) => {
+    return res(
+      ctx.data({
+        pageContentCollection: {},
+      }),
+    )
+  })
+
+  const server = setupServer(handler)
+
+  server.listen({ onUnhandledRequest: 'error' })
+
+  expect((await listPagePaths()).length).toBe(0)
 
   server.close()
 })
