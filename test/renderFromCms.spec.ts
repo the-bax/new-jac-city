@@ -1,7 +1,7 @@
 import { chromium, firefox } from 'playwright'
 import { BASE_URL, CONTENT_SELECTOR, PAGE_TITLE, TITLE_SELECTOR } from './constants'
 
-it('should render ./ from cms', async () => {
+test('render ./ from cms', async () => {
   for (const browserType of [chromium, firefox]) {
     const browser = await browserType.launch()
     const page = await browser.newPage()
@@ -17,7 +17,7 @@ it('should render ./ from cms', async () => {
   }
 })
 
-it('should render ./demo/ from cms', async () => {
+test('render ./demo/ from cms', async () => {
   for (const browserType of [chromium, firefox]) {
     const browser = await browserType.launch()
     const page = await browser.newPage()
@@ -33,7 +33,7 @@ it('should render ./demo/ from cms', async () => {
   }
 })
 
-it('should render ./demo/js from cms', async () => {
+test('render ./demo/js from cms', async () => {
   for (const browserType of [chromium, firefox]) {
     const browser = await browserType.launch()
     const page = await browser.newPage()
