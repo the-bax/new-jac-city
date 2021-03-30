@@ -5,7 +5,7 @@ import { setupServer } from 'msw/node'
 import 'whatwg-fetch'
 import type { Path } from '../types'
 
-it('should list page paths', async () => {
+test('list correct page paths', async () => {
   const mockAllPaths: Path[] = [
     {
       pathname: 'demo/js',
@@ -36,7 +36,7 @@ it('should list page paths', async () => {
   server.close()
 })
 
-it('should get an empty list page paths array', async () => {
+test('get an empty page paths array', async () => {
   const handler = graphql.query(LIST_PAGE_PATHS, (_, res, ctx) => {
     return res(
       ctx.data({

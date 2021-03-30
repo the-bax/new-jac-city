@@ -5,7 +5,7 @@ import { setupServer } from 'msw/node'
 import 'whatwg-fetch'
 import type { PageContentProps } from '../../components/Main/PageContent'
 
-it('should get page content', async () => {
+test('get correct page content', async () => {
   const mockPageContent: PageContentProps = {
     content: 'mock content',
     title: 'mock title',
@@ -32,7 +32,7 @@ it('should get page content', async () => {
   server.close()
 })
 
-it('should get undefined', async () => {
+test('get undefined page content', async () => {
   const handler = graphql.query(GET_PAGE_CONTENT_BY_PATHNAME, (_, res, ctx) => {
     return res(
       ctx.data({
