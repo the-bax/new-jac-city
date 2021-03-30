@@ -1,5 +1,5 @@
 import { CONTENTFUL_API_URL, headers } from '../constants'
-import { GET_PAGE_CONTENT_BY_PATHNAME } from './constant'
+import { GET_PAGE_CONTENT_BY_PATHNAME } from './constants'
 import { HttpRequestMethod } from '../types'
 import type { PageContentProps } from '../../components/Main/PageContent'
 

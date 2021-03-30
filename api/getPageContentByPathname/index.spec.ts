@@ -1,5 +1,5 @@
 import getPageContentByPathname from './'
-import { GET_PAGE_CONTENT_BY_PATHNAME } from './constant'
+import { GET_PAGE_CONTENT_BY_PATHNAME } from './constants'
 import { graphql } from 'msw'
 import { setupServer } from 'msw/node'
 import 'whatwg-fetch'
