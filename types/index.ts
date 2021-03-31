@@ -11,9 +11,7 @@ export type PageParams = {
 }
 
 export type StaticProps = {
-  props: {
-    pageContent?: Record<string, string>
-  }
+  props: SitePageProps
 }
 
 export type StaticPaths = {

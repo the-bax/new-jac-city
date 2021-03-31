@@ -1,6 +1,5 @@
-import { CONTENTFUL_API_URL, headers } from '../constants'
+import { CONTENTFUL_API_URL, headers, LIST_PAGE_PATHS } from '../constants'
 import { HttpRequestMethod } from '../types'
-import { LIST_PAGE_PATHS } from './constants'
 import type { Path } from '../types'
 
 export default async function listPagePaths(): Promise<Path[]> {
@@ -23,5 +22,5 @@ export default async function listPagePaths(): Promise<Path[]> {
 
   const json = await result.json()
 
-  return json?.data?.pageContentCollection?.items || []
+  return json.data.pageContentCollection.items
 }
