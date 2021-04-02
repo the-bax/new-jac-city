@@ -1,6 +1,6 @@
 import mockServer from './utilities/mockServer'
 import SitePage, { getStaticPaths, getStaticProps } from '../../pages/[[...slug]]/index'
-import { render } from '@testing-library/react'
+import { screen, render } from '@testing-library/react'
 import 'whatwg-fetch'
 
 test('render pages with dynamic path', async () => {
@@ -11,17 +11,13 @@ test('render pages with dynamic path', async () => {
   expect(paths[0].params.slug).toBeUndefined
   expect(paths[1].params.slug?.join('/')).toBe('demo/js')
 
-  for (const path of paths) {
-    const {
-      props: { pageContent },
-    } = await getStaticProps(path)
-    const { getAllByText, rerender } = render(<SitePage pageContent={pageContent} />)
+  const {
+    props: { pageContent },
+  } = await getStaticProps(paths[0])
+  render(<SitePage pageContent={pageContent} />)
 
-    expect(getAllByText(/mock title/i))
-    expect(getAllByText(/mock content/i))
-
-    rerender(<></>)
-  }
+  expect(screen.getAllByText(/mock title/i))
+  expect(screen.getAllByText(/mock content/i))
 
   mockServer.close()
 })

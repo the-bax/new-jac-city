@@ -1,6 +1,7 @@
 import { CONTENTFUL_API_URL, GET_PAGE_CONTENT_BY_PATHNAME, headers } from '../constants'
 import { HttpRequestMethod } from '../types'
 import type { PageContentProps } from '../../components/Main/PageContent'
+import type { PageContentResponseBody } from '../types'
 
 export default async function getPageContentByPathname(pathname: string): Promise<PageContentProps> {
   const body = JSON.stringify({
@@ -21,7 +22,7 @@ export default async function getPageContentByPathname(pathname: string): Promis
     body,
   })
 
-  const json = await result.json()
+  const json: PageContentResponseBody = await result.json()
   const [pageContent] = json.data.pageContentCollection.items
 
   return pageContent
