@@ -7,10 +7,6 @@ test('render pages with dynamic path', async () => {
   mockServer.listen({ onUnhandledRequest: 'error' })
 
   const { paths } = await getStaticPaths()
-
-  expect(paths[0].params.slug).toBeUndefined
-  expect(paths[1].params.slug?.join('/')).toBe('demo/js')
-
   const {
     props: { pageContent },
   } = await getStaticProps(paths[0])
