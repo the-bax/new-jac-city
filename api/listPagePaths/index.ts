@@ -1,11 +1,11 @@
-import { CONTENTFUL_API_URL, headers } from '../constants'
+import { CONTENTFUL_API_URL, headers, LIST_PAGE_PATHS } from '../constants'
 import { HttpRequestMethod } from '../types'
-import type { Path } from '../types'
+import type { Path, PathsResponseBody } from '../types'
 
 export default async function listPagePaths(): Promise<Path[]> {
   const body = JSON.stringify({
-    operationName: 'ListPagePaths',
-    query: `query ListPagePaths {
+    operationName: LIST_PAGE_PATHS,
+    query: `query ${LIST_PAGE_PATHS} {
       pageContentCollection {
         items {
           pathname
@@ -20,7 +20,7 @@ export default async function listPagePaths(): Promise<Path[]> {
     body,
   })
 
-  const json = await result.json()
+  const json: PathsResponseBody = await result.json()
 
-  return json?.data?.pageContentCollection?.items || []
+  return json.data.pageContentCollection.items
 }
