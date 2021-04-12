@@ -1,6 +1,6 @@
 import SecondaryNav from '.'
 import type { Meta, Story } from '@storybook/react'
-import { ReactElement } from 'react'
+import type { ReactElement } from 'react'
 
 const style = {
   backgroundColor: 'rgb(245,245,245)',
@@ -16,7 +16,6 @@ const Template: Story<Record<string, never>> = (args) => <SecondaryNav {...args}
 
 const meta: Meta = {
   component: SecondaryNav,
-  title: 'SecondaryNav',
   decorators: [
     (Story: () => ReactElement): JSX.Element => {
       return (
@@ -45,7 +44,9 @@ const meta: Meta = {
     a11y: {
       element: '#root header ~ *:not(main)',
     },
+    layout: 'fullscreen',
   },
+  title: 'SecondaryNav',
 }
 
 export const Default = Template.bind({})
