@@ -1,14 +1,12 @@
-import Nav from './Nav'
-import styles from './Header.module.css'
+import style from './Header.module.css'
+import utilityStyle from '../../styles/utilities.module.css'
 
 export default function Header(): JSX.Element {
   return (
-    <>
-      <header className={styles.header}>
+    <div className={style.wrapper}>
+      <header className={[style.header, utilityStyle.bgFiord, utilityStyle.colorLight].join(' ')}>
         <h1>The Jac</h1>
       </header>
-      <Nav />
-      <div className={styles.title}>&ldquo;A Gathering&rdquo; album release tour 2021 coming soon!</div>
-    </>
+    </div>
   )
 }
