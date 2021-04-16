@@ -1,0 +1,16 @@
+.bgCloudBurst {
+  background-color: hsla(224, 45%, 22%, 1);
+}
+
+.colorLight {
+  color: hsla(0, 0%, 100%, 1);
+}
+
+.linkColorLight {
+  color: hsla(0, 0%, 100%, 0.8);
+}
+
+.linkColorLight:focus,
+.linkColorLight:hover {
+  color: lemonchiffon;
+}

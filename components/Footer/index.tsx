@@ -1,19 +1,26 @@
-import { SiFacebook as Facebook } from 'react-icons/si'
 import style from './Footer.module.css'
+import utilityStyle from './utilities.module.css'
+import { SiFacebook as Facebook } from 'react-icons/si'
 
 export default function Footer(): JSX.Element {
   return (
-    <footer className={style.footer} id="social">
-      <span>
-        Connect with us on{' '}
-        <a href="https://www.facebook.com/TheJacNZ/" className={style.icon}>
-          <Facebook />
+    <footer className={[style.footer, utilityStyle.bgCloudBurst, utilityStyle.colorLight].join(' ')}>
+      <span className={style.withIcon}>
+        Connect with us on&nbsp;
+        <a
+          aria-label="Go to Facebook page."
+          className={utilityStyle.linkColorLight}
+          href="https://www.facebook.com/TheJacNZ/"
+        >
+          <Facebook aria-label="Facebook icon" className={style.icon} />
         </a>
-      </span>{' '}
-      <span className={style.separator}>|</span>
-      <span>Copyright 2021 The Jac</span> <span className={style.separator}>|</span>{' '}
+      </span>
+      <span>Copyright 2021 The Jac</span>
       <span>
-        Site built by <a href="https://paperhat.ltd/">Paperhat</a>
+        Site built by&nbsp;
+        <a className={utilityStyle.linkColorLight} href="https://paperhat.ltd/">
+          Paperhat
+        </a>
       </span>
     </footer>
   )
