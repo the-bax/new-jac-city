@@ -8,6 +8,7 @@ specifiers:
   '@babel/preset-typescript': ^7.13.0
   '@commitlint/cli': ^12.0.1
   '@commitlint/config-conventional': ^12.0.1
+  '@storybook/addon-a11y': ^6.2.7
   '@storybook/addon-actions': ^6.2.5
   '@storybook/addon-essentials': ^6.2.5
   '@storybook/addon-links': ^6.2.5
@@ -59,6 +60,7 @@ devDependencies:
   '@babel/preset-typescript': 7.13.0_@babel+core@7.13.15
   '@commitlint/cli': 12.1.1
   '@commitlint/config-conventional': 12.1.1
+  '@storybook/addon-a11y': 6.2.7_ba191c0052acfa37659f3ba04a2d9405
   '@storybook/addon-actions': 6.2.7_ba191c0052acfa37659f3ba04a2d9405
   '@storybook/addon-essentials': 6.2.7_378dcdff4eefa83d9bf592b3b696d818
   '@storybook/addon-links': 6.2.7_react-dom@17.0.2+react@17.0.2
@@ -2123,6 +2125,39 @@ packages:
     resolution: {integrity: sha512-MZPUxrmFubI36XS1DI3qmI0YdN1gks62JtFZvxR67ljjSNCeK6U08Zx4msEWOXuofgqUt6zPHSi1H9fbjR/NRA==}
     dependencies:
       '@sinonjs/commons': 1.8.3
+    dev: true
+
+  /@storybook/addon-a11y/6.2.7_ba191c0052acfa37659f3ba04a2d9405:
+    resolution: {integrity: sha512-pILLWLl3CGLsORDeD76pRphX+nT0C/GpjUOwWZZDqV9aVXY20zUo48EdpyPzgXF1vXzOVIm/6UxnrqorvXnEPg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0
+      react-dom: ^16.8.0 || ^17.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@storybook/addons': 6.2.7_react-dom@17.0.2+react@17.0.2
+      '@storybook/api': 6.2.7_react-dom@17.0.2+react@17.0.2
+      '@storybook/channels': 6.2.7
+      '@storybook/client-api': 6.2.7_react-dom@17.0.2+react@17.0.2
+      '@storybook/client-logger': 6.2.7
+      '@storybook/components': 6.2.7_ba191c0052acfa37659f3ba04a2d9405
+      '@storybook/core-events': 6.2.7
+      '@storybook/theming': 6.2.7_react-dom@17.0.2+react@17.0.2
+      axe-core: 4.1.4
+      core-js: 3.10.1
+      global: 4.4.0
+      lodash: 4.17.21
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      react-sizeme: 3.0.1_react-dom@17.0.2+react@17.0.2
+      regenerator-runtime: 0.13.7
+      ts-dedent: 2.1.1
+      util-deprecate: 1.0.2
+    transitivePeerDependencies:
+      - '@types/react'
     dev: true
 
   /@storybook/addon-actions/6.2.7_ba191c0052acfa37659f3ba04a2d9405:
