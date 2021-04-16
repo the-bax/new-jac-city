@@ -1,5 +1,5 @@
 import style from './Header.module.css'
-import utilityStyle from '../../styles/utilities.module.css'
+import utilityStyle from './utilities.module.css'
 
 export default function Header(): JSX.Element {
   return (
