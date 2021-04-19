@@ -4,7 +4,7 @@ import type { TuberProps } from '.'
 
 const meta: Meta = {
   component: Tuber,
-  title: 'Tuber',
+  title: 'components/Main/Tuber',
 }
 
 const Template: Story<TuberProps> = (args) => <Tuber {...args} />
