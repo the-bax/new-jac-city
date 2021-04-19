@@ -2,7 +2,7 @@
   align-items: center;
   display: flex;
   flex-direction: row;
-  height: var(--s6);
+  height: var(--space6);
   justify-content: center;
 }
 
@@ -12,13 +12,13 @@
 
 .footer > span:not(:first-of-type)::before {
   content: '|';
-  margin: 0 var(--s1);
+  margin: 0 var(--space1);
 }
 
 .icon {
-  --vertical-offset: var(--s-5);
+  --vertical-offset: var(--space-5);
   height: calc(var(--vertical-offset) * 2 + 0.75em);
-  margin-left: var(--s-4);
+  margin-left: var(--space-4);
   vertical-align: calc(0em - var(--vertical-offset));
   width: calc(var(--vertical-offset) * 2 + 0.75em);
 }

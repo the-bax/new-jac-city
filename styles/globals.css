@@ -1,17 +1,17 @@
 :root {
   --ratio: 1.5;
-  --s-5: calc(var(--s-4) / var(--ratio));
-  --s-4: calc(var(--s-3) / var(--ratio));
-  --s-3: calc(var(--s-2) / var(--ratio));
-  --s-2: calc(var(--s-1) / var(--ratio));
-  --s-1: calc(var(--s0) / var(--ratio));
-  --s0: 1rem;
-  --s1: calc(var(--s0) * var(--ratio));
-  --s2: calc(var(--s1) * var(--ratio));
-  --s3: calc(var(--s2) * var(--ratio));
-  --s4: calc(var(--s3) * var(--ratio));
-  --s5: calc(var(--s4) * var(--ratio));
-  --s6: calc(var(--s5) * var(--ratio));
+  --space-5: calc(var(--space-4) / var(--ratio));
+  --space-4: calc(var(--space-3) / var(--ratio));
+  --space-3: calc(var(--space-2) / var(--ratio));
+  --space-2: calc(var(--space-1) / var(--ratio));
+  --space-1: calc(var(--space0) / var(--ratio));
+  --space0: 1rem;
+  --space1: calc(var(--space0) * var(--ratio));
+  --space2: calc(var(--space1) * var(--ratio));
+  --space3: calc(var(--space2) * var(--ratio));
+  --space4: calc(var(--space3) * var(--ratio));
+  --space5: calc(var(--space4) * var(--ratio));
+  --space6: calc(var(--space5) * var(--ratio));
 }
 
 a {
