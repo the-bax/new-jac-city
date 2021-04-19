@@ -1,5 +1,5 @@
 import Header from '.'
-import MockMain from './MockMain'
+import MockBlock from './MockBlock'
 import type { Meta } from '@storybook/react'
 import type { ReactElement } from 'react'
 
@@ -9,13 +9,16 @@ const meta: Meta = {
     (Story: () => ReactElement): JSX.Element => (
       <>
         <Story />
-        <MockMain />
+        <MockBlock>Section 1</MockBlock>
+        <MockBlock>Section 2</MockBlock>
+        <MockBlock>Section 3</MockBlock>
+        <MockBlock>Section 4</MockBlock>
       </>
     ),
   ],
   parameters: {
     a11y: {
-      element: '#root *:not(main, main *)',
+      element: '#root *:not(.mockBlock, .mockBlock *)',
     },
     layout: 'fullscreen',
   },
