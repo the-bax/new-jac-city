@@ -1,5 +1,7 @@
 .header {
   align-items: center;
+  background-color: var(--bgFiord);
+  color: var(--colorLight);
   display: flex;
   flex-direction: column;
   height: var(--header-height);

@@ -1,9 +1,20 @@
 .footer {
   align-items: center;
+  background-color: var(--bgCloudBurst);
+  color: var(--colorLight);
   display: flex;
   flex-direction: row;
   height: var(--space6);
   justify-content: center;
+}
+
+.footer a {
+  color: var(--linkColorLight);
+}
+
+.footer a:focus,
+.footer a:hover {
+  color: var(--linkColorFocus);
 }
 
 .footer > span {

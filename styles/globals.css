@@ -1,4 +1,9 @@
 :root {
+  --bgCloudBurst: hsla(224, 45%, 22%, 1);
+  --bgFiord: hsla(224, 19%, 35%, 1);
+  --colorLight: hsla(0, 0%, 100%, 1);
+  --linkColorLight: hsla(0, 0%, 100%, 0.8);
+  --linkColorFocus: lemonchiffon;
   --ratio: 1.5;
   --space-5: calc(var(--space-4) / var(--ratio));
   --space-4: calc(var(--space-3) / var(--ratio));
