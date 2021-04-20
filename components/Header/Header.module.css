@@ -4,7 +4,7 @@
   color: var(--colorLight);
   display: flex;
   flex-direction: column;
-  height: var(--header-height);
+  height: var(--headerHeight);
   justify-content: center;
   position: fixed;
   width: 100%;
@@ -16,6 +16,6 @@
 }
 
 .wrapper {
-  --header-height: 200px;
-  height: var(--header-height);
+  --headerHeight: var(--spaceSixRatiosBigger);
+  height: var(--headerHeight);
 }

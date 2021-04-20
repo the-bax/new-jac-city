@@ -4,7 +4,7 @@
   color: var(--colorLight);
   display: flex;
   flex-direction: row;
-  height: var(--space6);
+  height: var(--spaceSixRatiosBigger);
   justify-content: center;
 }
 
@@ -23,13 +23,13 @@
 
 .footer > span:not(:first-of-type)::before {
   content: '|';
-  margin: 0 var(--space1);
+  margin: 0 var(--spaceOneRatioBigger);
 }
 
 .icon {
-  --vertical-offset: var(--space-5);
+  --vertical-offset: var(--spaceFiveRatiosSmaller);
   height: calc(var(--vertical-offset) * 2 + 0.75em);
-  margin-left: var(--space-4);
+  margin-left: var(--spaceFourRatiosSmaller);
   vertical-align: calc(0em - var(--vertical-offset));
   width: calc(var(--vertical-offset) * 2 + 0.75em);
 }
