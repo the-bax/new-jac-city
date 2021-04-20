@@ -2,10 +2,9 @@
   --cloudBurst: hsla(224, 45%, 22%, 1);
   --fiord: hsla(224, 19%, 35%, 1);
 
-  --bgFooter: var(--cloudBurst);
-  --bgHeader: var(--fiord);
+  --footerBackground: var(--cloudBurst);
+  --headerBackground: var(--fiord);
   --linkColorFocusLight: hsl(54, 100%, 90%);
-  --linkColorLight: hsla(0, 0%, 100%, 0.8);
   --textColorLight: hsla(0, 0%, 100%, 1);
 
   --defaultSpace: 1rem;

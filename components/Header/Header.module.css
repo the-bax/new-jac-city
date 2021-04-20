@@ -1,6 +1,6 @@
 .header {
   align-items: center;
-  background-color: var(--bgHeader);
+  background-color: var(--headerBackground);
   color: var(--textColorLight);
   display: flex;
   flex-direction: column;

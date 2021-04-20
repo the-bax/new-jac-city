@@ -1,6 +1,6 @@
 .footer {
   align-items: center;
-  background-color: var(--bgFooter);
+  background-color: var(--footerBackground);
   color: var(--textColorLight);
   display: flex;
   flex-direction: row;
