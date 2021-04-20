@@ -1,7 +1,7 @@
 .header {
   align-items: center;
-  background-color: var(--bgFiord);
-  color: var(--colorLight);
+  background-color: var(--bgHeader);
+  color: var(--textColorLight);
   display: flex;
   flex-direction: column;
   height: var(--headerHeight);

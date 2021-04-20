@@ -1,7 +1,7 @@
 .footer {
   align-items: center;
-  background-color: var(--bgCloudBurst);
-  color: var(--colorLight);
+  background-color: var(--bgFooter);
+  color: var(--textColorLight);
   display: flex;
   flex-direction: row;
   height: var(--spaceSixRatiosBigger);
@@ -14,7 +14,7 @@
 
 .footer a:focus,
 .footer a:hover {
-  color: var(--linkColorFocus);
+  color: var(--linkColorFocusLight);
 }
 
 .footer > span {
