@@ -1,10 +1,9 @@
 import style from './Header.module.css'
-import utilityStyle from './utilities.module.css'
 
 export default function Header(): JSX.Element {
   return (
     <div className={style.wrapper}>
-      <header className={[style.header, utilityStyle.bgFiord, utilityStyle.colorLight].join(' ')}>
+      <header className={style.header}>
         <h1>The Jac</h1>
       </header>
     </div>
