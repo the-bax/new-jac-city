@@ -1,0 +1,18 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.section * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.disclosure {
+  margin-top: var(--spaceFiveRatiosSmaller);
+}
+
+.container {
+  margin-top: var(--spaceOneRatioBigger);
+}
