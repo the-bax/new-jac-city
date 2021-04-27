@@ -5,14 +5,14 @@
 }
 
 .section * {
-  margin-top: 0;
   margin-bottom: 0;
+  margin-top: 0;
 }
 
 .disclosure {
   margin-top: var(--spaceFiveRatiosSmaller);
 }
 
-.container {
+.wrapper {
   margin-top: var(--spaceOneRatioBigger);
 }

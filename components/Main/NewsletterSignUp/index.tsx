@@ -9,7 +9,7 @@ export default function NewsletterSignUp(): JSX.Element {
     <section aria-label="Newsletter sign up." className={style.section}>
       <h2>Join our newsletter</h2>
       <p className={style.disclosure}>Keep up to date with the band! Zero spam, and unsubscribe at any time.</p>
-      <div className={style.container}>
+      <div className={style.wrapper}>
         {isSuccessful ? (
           <p>You&apos;re in! Keep an eye out for a confirmation email!</p>
         ) : (
