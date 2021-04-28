@@ -6,9 +6,9 @@
 }
 
 .form * {
+  font-size: 0.9rem;
   margin-bottom: 0;
   margin-top: 0;
-  font-size: 0.9rem;
 }
 
 .form button,
@@ -16,7 +16,7 @@
 .form textarea {
   border: 1px solid gray;
   line-height: var(--spaceOneRatioBigger);
-  padding: calc(var(--spaceThreeRatiosSmaller) - 1px) var(--spaceTwoRatiosSmaller);
+  padding: calc(var(--spaceThreeRatiosSmaller) - 1px) calc(var(--spaceTwoRatiosSmaller) - 1px);
 }
 
 .form button {
@@ -40,7 +40,7 @@
 .form textarea:focus-visible {
   border: 2px solid black;
   outline: none;
-  padding: calc(var(--spaceThreeRatiosSmaller) - 2px) var(--spaceTwoRatiosSmaller);
+  padding: calc(var(--spaceThreeRatiosSmaller) - 2px) calc(var(--spaceTwoRatiosSmaller) - 2px);
 }
 
 .form input + label,
