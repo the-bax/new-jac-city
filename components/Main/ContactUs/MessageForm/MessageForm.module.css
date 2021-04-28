@@ -10,14 +10,34 @@
   max-width: 30rem;
 }
 
+.form button,
+.form input,
+.form textarea {
+  border: 1px solid gray;
+  line-height: var(--spaceOneRatioBigger);
+  padding: 5px 9px;
+}
+
 .form button {
   margin-top: var(--defaultSpace);
   max-width: 10rem;
 }
 
+.form button:hover {
+  background-color: black;
+  color: white;
+}
+
 .form input,
 .form textarea {
   margin-top: var(--spaceFiveRatiosSmaller);
+}
+
+.form input:focus-visible,
+.form textarea:focus-visible {
+  border: 2px solid black;
+  outline: none;
+  padding: 4px 8px;
 }
 
 .form input + label,
