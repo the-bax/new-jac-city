@@ -20,17 +20,7 @@ export default function SignUpForm({ setIsSuccessful }: SignUpFormProps): JSX.El
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        aria-invalid="false"
-        aria-label="Enter your email address."
-        aria-required="true"
-        name="email"
-        onChange={handleChange}
-        placeholder="Enter Email"
-        required
-        type="email"
-        value={email}
-      />
+      <input name="email" onChange={handleChange} placeholder="Enter Email" required type="email" value={email} />
       <button type="submit">Join</button>
     </form>
   )
