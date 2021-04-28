@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import style from './SignUpForm.module.css'
 import type { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react'
 
 export type SignUpFormProps = {
@@ -19,7 +20,7 @@ export default function SignUpForm({ setIsSuccessful }: SignUpFormProps): JSX.El
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={style.form} onSubmit={handleSubmit}>
       <input name="email" onChange={handleChange} placeholder="Enter Email" required type="email" value={email} />
       <button type="submit">Join</button>
     </form>

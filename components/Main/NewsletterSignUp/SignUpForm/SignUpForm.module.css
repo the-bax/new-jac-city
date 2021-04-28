@@ -1,0 +1,16 @@
+.form > * {
+  border: 1px solid gray;
+  line-height: var(--spaceOneRatioBigger);
+  padding: 5px 9px;
+}
+
+.form > button:hover {
+  background-color: black;
+  color: white;
+}
+
+.form > input:focus-visible {
+  border: 2px solid black;
+  outline: none;
+  padding: 4px 8px;
+}
