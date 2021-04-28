@@ -1,7 +1,8 @@
 .form > * {
   border: 1px solid gray;
+  font-size: 0.9rem;
   line-height: var(--spaceOneRatioBigger);
-  padding: 5px 9px;
+  padding: calc(var(--spaceThreeRatiosSmaller) - 1px) calc(var(--spaceTwoRatiosSmaller) - 1px);
 }
 
 .form > button:hover {
@@ -12,5 +13,5 @@
 .form > input:focus-visible {
   border: 2px solid black;
   outline: none;
-  padding: 4px 8px;
+  padding: calc(var(--spaceThreeRatiosSmaller) - 2px) calc(var(--spaceTwoRatiosSmaller) - 2px);
 }
