@@ -45,3 +45,8 @@
 .form textarea + label {
   margin-top: var(--spaceOneRatioSmaller);
 }
+
+.required::after {
+  content: '*';
+  margin-left: var(--spaceFiveRatiosSmaller);
+}

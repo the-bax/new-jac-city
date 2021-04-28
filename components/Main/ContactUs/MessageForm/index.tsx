@@ -42,11 +42,17 @@ export default function MessageForm({ setIsSuccessful }: ContactUsFormProps): JS
 
   return (
     <form className={style.form} onSubmit={handleSubmit}>
-      <label htmlFor={NAME}>Name</label>
+      <label className={style.required} htmlFor={NAME}>
+        Name
+      </label>
       <input id={NAME} name={NAME} onChange={handleChange} required type="text" value={message[NAME]} />
-      <label htmlFor={EMAIL}>Email</label>
+      <label className={style.required} htmlFor={EMAIL}>
+        Email
+      </label>
       <input id={EMAIL} name={EMAIL} onChange={handleChange} required type="email" value={message[EMAIL]} />
-      <label htmlFor={BODY}>Message</label>
+      <label className={style.required} htmlFor={BODY}>
+        Message
+      </label>
       <textarea
         id={BODY}
         maxLength={MAX_BODY_LENGTH}
