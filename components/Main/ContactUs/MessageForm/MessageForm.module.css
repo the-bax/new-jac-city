@@ -29,6 +29,7 @@
 }
 
 .form input,
+.form span,
 .form textarea {
   margin-top: var(--spaceFiveRatiosSmaller);
 }

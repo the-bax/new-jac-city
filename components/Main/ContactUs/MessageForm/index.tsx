@@ -16,11 +16,23 @@ export default function MessageForm({ setIsSuccessful }: ContactUsFormProps): JS
     [NAME]: '',
     [EMAIL]: '',
     [BODY]: '',
+    bodyLength: 0,
   })
 
   const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     event.preventDefault()
-    setMesage({ ...message, [event.target.name]: event.target.value })
+    if (event.target.name === BODY) {
+      setMesage({
+        ...message,
+        [event.target.name]: event.target.value,
+        bodyLength: event.target.value.length,
+      })
+    } else {
+      setMesage({
+        ...message,
+        [event.target.name]: event.target.value,
+      })
+    }
   }
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -43,6 +55,7 @@ export default function MessageForm({ setIsSuccessful }: ContactUsFormProps): JS
         required
         value={message[BODY]}
       />
+      <span>{message.bodyLength}</span>
       <button>Send Message</button>
     </form>
   )
