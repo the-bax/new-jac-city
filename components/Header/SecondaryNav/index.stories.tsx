@@ -21,7 +21,7 @@ const meta: Meta = {
   ],
   parameters: {
     a11y: {
-      element: '#root *:not(.mockBlock, .mockBlock *)',
+      element: '#root :not([class*="mockBlock"]):not([class*="mockBlock"] *)',
     },
     layout: 'fullscreen',
   },
