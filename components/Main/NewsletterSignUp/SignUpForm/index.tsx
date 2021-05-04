@@ -1,12 +1,8 @@
 import React, { useState } from 'react'
 import style from './SignUpForm.module.css'
-import type { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react'
+import type { ChangeEvent } from 'react'
 
-export type SignUpFormProps = {
-  setIsSuccessful: Dispatch<SetStateAction<boolean>>
-}
-
-export default function SignUpForm({ setIsSuccessful }: SignUpFormProps): JSX.Element {
+export default function SignUpForm(): JSX.Element {
   const [email, setEmail] = useState('')
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -14,14 +10,15 @@ export default function SignUpForm({ setIsSuccessful }: SignUpFormProps): JSX.El
     setEmail(event.target.value)
   }
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    setIsSuccessful(true)
-  }
-
   return (
-    <form className={style.form} onSubmit={handleSubmit}>
-      <input name="email" onChange={handleChange} placeholder="Enter Email" required type="email" value={email} />
+    <form
+      action="https://gmail.us1.list-manage.com/subscribe/post?u=9141e689df0aab3225e661f8b&amp;id=69004741a3"
+      className={style.form}
+      method="post"
+    >
+      <input name="EMAIL" onChange={handleChange} placeholder="Enter Email" required type="email" value={email} />
+      <input name="b_9141e689df0aab3225e661f8b_69004741a3" readOnly type="hidden" value="" />
+      <input name="subscribe" readOnly type="hidden" value="Subscribe" />
       <button type="submit">Join</button>
     </form>
   )
