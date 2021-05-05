@@ -10,7 +10,6 @@ export default function SignUpForm({ setIsSuccessful }: SignUpFormProps): JSX.El
   const [email, setEmail] = useState('')
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    event.preventDefault()
     setEmail(event.target.value)
   }
 
@@ -20,9 +19,19 @@ export default function SignUpForm({ setIsSuccessful }: SignUpFormProps): JSX.El
   }
 
   return (
-    <form className={style.form} onSubmit={handleSubmit}>
-      <input name="email" onChange={handleChange} placeholder="Enter Email" required type="email" value={email} />
-      <button type="submit">Join</button>
+    <form onSubmit={handleSubmit}>
+      <input
+        className={style.input}
+        name="email"
+        onChange={handleChange}
+        placeholder="Enter Email"
+        required
+        type="email"
+        value={email}
+      />
+      <button className={style.button} type="submit">
+        Join
+      </button>
     </form>
   )
 }

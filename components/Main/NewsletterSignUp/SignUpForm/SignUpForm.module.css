@@ -1,17 +1,17 @@
-.form > * {
+.button,
+.input {
   border: 1px solid gray;
   font-size: 0.9rem;
   line-height: var(--spaceOneRatioBigger);
-  margin: 0;
   padding: calc(var(--spaceThreeRatiosSmaller) - 1px) calc(var(--spaceTwoRatiosSmaller) - 1px);
 }
 
-.form > button:hover {
+.button:hover {
   background-color: black;
   color: white;
 }
 
-.form > input:focus {
+.input:focus {
   border: 2px solid black;
   outline: none;
   padding: calc(var(--spaceThreeRatiosSmaller) - 2px) calc(var(--spaceTwoRatiosSmaller) - 2px);
