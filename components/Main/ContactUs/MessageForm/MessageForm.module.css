@@ -1,49 +1,44 @@
 .form {
   display: flex;
   flex-direction: column;
+  font-size: 0.9rem;
   justify-content: flex-start;
   max-width: 30rem;
 }
 
-.form * {
-  font-size: 0.9rem;
-  margin: 0;
-}
-
-.form button,
-.form input,
-.form textarea {
+.button,
+.input,
+.textarea {
   border: 1px solid gray;
   line-height: var(--spaceOneRatioBigger);
   padding: calc(var(--spaceThreeRatiosSmaller) - 1px) calc(var(--spaceTwoRatiosSmaller) - 1px);
 }
 
-.form button {
+.button {
   margin-top: var(--defaultSpace);
-  margin-left: 0;
   margin-right: auto;
 }
 
-.form button:hover {
+.button:hover {
   background-color: black;
   color: white;
 }
 
-.form input,
-.form span,
-.form textarea {
+.input,
+.span,
+.textarea {
   margin-top: var(--spaceFiveRatiosSmaller);
 }
 
-.form input:focus,
-.form textarea:focus {
+.input:focus,
+.textarea:focus {
   border: 2px solid black;
   outline: none;
   padding: calc(var(--spaceThreeRatiosSmaller) - 2px) calc(var(--spaceTwoRatiosSmaller) - 2px);
 }
 
-.form input + label,
-.form textarea + label {
+.input + label,
+.textarea + label {
   margin-top: var(--spaceOneRatioSmaller);
 }
 

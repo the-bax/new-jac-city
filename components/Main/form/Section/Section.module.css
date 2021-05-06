@@ -4,11 +4,7 @@
   justify-content: flex-start;
 }
 
-.section * {
-  margin: 0;
-}
-
-.intro {
+.description {
   margin-top: var(--spaceFiveRatiosSmaller);
 }
 
