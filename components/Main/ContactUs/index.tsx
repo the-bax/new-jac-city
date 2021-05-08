@@ -8,8 +8,8 @@ export default function ContactUs(): JSX.Element {
   return (
     <Section
       ariaLabel="Contact us."
-      header="Contact Us"
       description="Any feedback? Please fill out our quick online inquiry form to send us a message."
+      header="Contact Us"
     >
       {isSuccessful ? (
         <p>Your message has been sent successfully!</p>
