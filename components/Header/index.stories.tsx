@@ -1,5 +1,6 @@
 import Header from '.'
 import MockBlock from './MockBlock'
+import style from './MockBlock/MockBlock.module.css'
 import type { Meta } from '@storybook/react'
 import type { ReactElement } from 'react'
 
@@ -18,7 +19,7 @@ const meta: Meta = {
   ],
   parameters: {
     a11y: {
-      element: '#root *:not(.mockBlock, .mockBlock *)',
+      element: `#root :not(.${style.mockBlock}):not(.${style.mockBlock} *)`,
     },
     layout: 'fullscreen',
   },
