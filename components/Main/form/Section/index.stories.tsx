@@ -1,4 +1,4 @@
-import MockBlock from '../../../Header/MockBlock'
+import MockBlock from '../../../MockBlock'
 import Section from '.'
 import type { Meta, Story } from '@storybook/react'
 import type { SectionProps } from '.'
