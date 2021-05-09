@@ -6,6 +6,6 @@ const meta: Meta = {
   title: 'components/Main/form/Button',
 }
 
-export const Default = (): JSX.Element => <Button caption="Click me" />
+export const Default = (): JSX.Element => <Button>Click Me</Button>
 
 export default meta

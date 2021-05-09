@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import style from './MessageForm.module.css'
 import type { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react'
+import Button from '../../form/Button'
+import InputField from '../../form/InputField'
 
 const NAME = 'name'
 const EMAIL = 'email'
@@ -41,30 +43,8 @@ export default function MessageForm({ setIsSuccessful }: ContactUsFormProps): JS
 
   return (
     <form className={style.form} onSubmit={handleSubmit}>
-      <label className={style.required} htmlFor={`contact-us-message-form-${NAME}`}>
-        Name
-      </label>
-      <input
-        className={style.input}
-        id={`contact-us-message-form-${NAME}`}
-        name={NAME}
-        onChange={handleChange}
-        required
-        type="text"
-        value={message[NAME]}
-      />
-      <label className={style.required} htmlFor={`contact-us-message-form-${EMAIL}`}>
-        Email
-      </label>
-      <input
-        className={style.input}
-        id={`contact-us-message-form-${EMAIL}`}
-        name={EMAIL}
-        onChange={handleChange}
-        required
-        type="email"
-        value={message[EMAIL]}
-      />
+      <InputField id={`contact-us-message-form-${NAME}`} label="Name" name={NAME} required={true} type="text" />
+      <InputField id={`contact-us-message-form-${EMAIL}`} label="Email" name={EMAIL} required={true} type="email" />
       <label className={style.required} htmlFor={`contact-us-message-form-${BODY}`}>
         Message
       </label>
@@ -78,7 +58,7 @@ export default function MessageForm({ setIsSuccessful }: ContactUsFormProps): JS
         value={message[BODY]}
       />
       <span>{bodyLength}</span>
-      <button className={style.button}>Send Message</button>
+      <Button>Send Message</Button>
     </form>
   )
 }

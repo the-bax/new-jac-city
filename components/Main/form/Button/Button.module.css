@@ -1,6 +1,5 @@
 .button {
   border: 1px solid gray;
-  display: inline-block;
   line-height: var(--spaceOneRatioBigger);
   padding: calc(var(--spaceThreeRatiosSmaller) - 1px) calc(var(--spaceTwoRatiosSmaller) - 1px);
 }

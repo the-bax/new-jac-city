@@ -1,9 +1,9 @@
 import style from './Button.module.css'
 
 export type ButtonProps = {
-  caption: string
+  children: React.ReactNode
 }
 
-export default function Button({ caption }: ButtonProps): JSX.Element {
-  return <button className={style.button}>{caption}</button>
+export default function Button({ children }: ButtonProps): JSX.Element {
+  return <button className={style.button}>{children}</button>
 }
