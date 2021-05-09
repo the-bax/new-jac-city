@@ -2,48 +2,10 @@
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  font-size: 0.9rem;
-  justify-content: flex-start;
   max-width: 30rem;
 }
 
-.button,
-.input,
-.textarea {
-  border: 1px solid gray;
-  line-height: var(--spaceOneRatioBigger);
-  padding: calc(var(--spaceThreeRatiosSmaller) - 1px) calc(var(--spaceTwoRatiosSmaller) - 1px);
-}
-
-.button {
-  margin-top: var(--defaultSpace);
-  margin-right: auto;
-}
-
-.button:hover {
-  background-color: black;
-  color: white;
-}
-
-.input,
-.span,
-.textarea {
-  margin-top: var(--spaceFiveRatiosSmaller);
-}
-
-.input:focus,
-.textarea:focus {
-  border: 2px solid black;
-  outline: none;
-  padding: calc(var(--spaceThreeRatiosSmaller) - 2px) calc(var(--spaceTwoRatiosSmaller) - 2px);
-}
-
-.input + label,
-.textarea + label {
+.form > div + button,
+.form > div + div {
   margin-top: var(--spaceOneRatioSmaller);
-}
-
-.required::after {
-  content: '*';
-  margin-left: var(--spaceFiveRatiosSmaller);
 }
