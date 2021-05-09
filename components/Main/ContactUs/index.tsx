@@ -1,9 +1,15 @@
+import Button from '../form/Button'
+import MessageForm from './MessageForm'
 import React, { useState } from 'react'
 import Section from '../form/Section'
-import MessageForm from './MessageForm'
+import style from './ContactUs.module.css'
 
 export default function ContactUs(): JSX.Element {
   const [isSuccessful, setIsSuccessful] = useState(false)
+
+  const handleClick = () => {
+    setIsSuccessful(false)
+  }
 
   return (
     <Section
@@ -12,7 +18,10 @@ export default function ContactUs(): JSX.Element {
       header="Contact Us"
     >
       {isSuccessful ? (
-        <p>Your message has been sent successfully!</p>
+        <>
+          <p className={style.p}>Your message has been sent successfully!</p>
+          <Button onClick={handleClick}>Send Another Message</Button>
+        </>
       ) : (
         <MessageForm setIsSuccessful={setIsSuccessful}></MessageForm>
       )}

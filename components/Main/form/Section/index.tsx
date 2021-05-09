@@ -1,8 +1,9 @@
 import style from './Section.module.css'
+import type { ReactNode } from 'react'
 
 export type SectionProps = {
   ariaLabel: string
-  children: React.ReactNode
+  children: ReactNode
   description?: string
   header: string
 }

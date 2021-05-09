@@ -1,8 +1,8 @@
-import style from './MessageForm.module.css'
-import type { Dispatch, FormEvent, SetStateAction } from 'react'
 import Button from '../../form/Button'
 import InputField from '../../form/InputField'
+import style from './MessageForm.module.css'
 import TextareaField from '../../form/TextareaField'
+import type { Dispatch, FormEvent, SetStateAction } from 'react'
 
 const NAME = 'name'
 const EMAIL = 'email'

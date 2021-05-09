@@ -1,7 +1,8 @@
 import style from './TextBlock.module.css'
+import type { ReactNode } from 'react'
 
 export type TextBlockProps = {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 export default function TextBlock({ children }: TextBlockProps): JSX.Element {

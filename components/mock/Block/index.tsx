@@ -1,7 +1,8 @@
 import style from './Block.module.css'
+import type { ReactNode } from 'react'
 
 export type MockBlockProps = {
-  children?: React.ReactNode
+  children?: ReactNode
   id?: string
 }
 
