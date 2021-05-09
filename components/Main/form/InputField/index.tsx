@@ -11,14 +11,7 @@ export type InputFieldProps = {
   type: 'email' | 'password' | 'text'
 }
 
-export default function InputField({
-  id,
-  label,
-  name,
-  placeholder,
-  required = false,
-  type,
-}: InputFieldProps): JSX.Element {
+export default function InputField({ id, label, name, placeholder, required, type }: InputFieldProps): JSX.Element {
   const [value, setValue] = useState('')
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

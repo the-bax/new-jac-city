@@ -14,17 +14,17 @@ export type TextareaFieldProps = {
 export default function TextareaField({
   id,
   label,
-  maxLength: maxBodyLength,
+  maxLength,
   name,
   placeholder,
   required = false,
 }: TextareaFieldProps): JSX.Element {
   const [value, setValue] = useState('')
-  const [bodyLength, setBodyLength] = useState(0)
+  const [length, setLength] = useState(0)
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setValue(event.target.value)
-    setBodyLength(event.target.value.length)
+    setLength(event.target.value.length)
   }
 
   return (
@@ -37,14 +37,14 @@ export default function TextareaField({
       <textarea
         className={style.textarea}
         id={id}
-        maxLength={maxBodyLength}
+        maxLength={maxLength}
         name={name}
         onChange={handleChange}
         placeholder={placeholder}
         required={required}
         value={value}
       />
-      {maxBodyLength ? <span>{bodyLength}</span> : null}
+      {maxLength ? <span className={style.span}>{length}</span> : null}
     </div>
   )
 }
