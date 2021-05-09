@@ -11,7 +11,7 @@ export default function Section({ ariaLabel, children, description, header }: Se
   return (
     <section aria-label={ariaLabel} className={style.section}>
       <h2>{header}</h2>
-      <p className={style.description}>{description}</p>
+      {description ? <p className={style.description}>{description}</p> : null}
       <div className={style.wrapper}>{children}</div>
     </section>
   )

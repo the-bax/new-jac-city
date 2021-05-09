@@ -1,5 +1,5 @@
 import Header from '.'
-import MockBlock from '../MockBlock'
+import MockBlock from '../mock/Block'
 import type { Meta } from '@storybook/react'
 import type { ReactElement } from 'react'
 

@@ -1,4 +1,4 @@
-import style from './MockBlock.module.css'
+import style from './Block.module.css'
 
 export type MockBlockProps = {
   children?: React.ReactNode
