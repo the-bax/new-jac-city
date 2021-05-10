@@ -1,7 +1,7 @@
 .button {
   border: 1px solid gray;
   line-height: var(--spaceOneRatioBigger);
-  padding: calc(var(--spaceThreeRatiosSmaller) - 1px) calc(var(--spaceTwoRatiosSmaller) - 1px);
+  padding: var(--spaceThreeRatiosSmaller) var(--spaceTwoRatiosSmaller);
 }
 
 .button:focus {

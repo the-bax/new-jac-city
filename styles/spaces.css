@@ -1,0 +1,17 @@
+:root {
+  --defaultSpace: 1rem;
+  --spaceRatio: 1.5;
+
+  --spaceFiveRatiosSmaller: calc(var(--spaceFourRatiosSmaller) / var(--spaceRatio));
+  --spaceFourRatiosSmaller: calc(var(--spaceThreeRatiosSmaller) / var(--spaceRatio));
+  --spaceThreeRatiosSmaller: calc(var(--spaceTwoRatiosSmaller) / var(--spaceRatio));
+  --spaceTwoRatiosSmaller: calc(var(--spaceOneRatioSmaller) / var(--spaceRatio));
+  --spaceOneRatioSmaller: calc(var(--defaultSpace) / var(--spaceRatio));
+
+  --spaceOneRatioBigger: calc(var(--defaultSpace) * var(--spaceRatio));
+  --spaceTwoRatiosBigger: calc(var(--spaceOneRatioBigger) * var(--spaceRatio));
+  --spaceThreeRatiosBigger: calc(var(--spaceTwoRatiosBigger) * var(--spaceRatio));
+  --spaceFourRatiosBigger: calc(var(--spaceThreeRatiosBigger) * var(--spaceRatio));
+  --spaceFiveRatiosBigger: calc(var(--spaceFourRatiosBigger) * var(--spaceRatio));
+  --spaceSixRatiosBigger: calc(var(--spaceFiveRatiosBigger) * var(--spaceRatio));
+}
