@@ -1,4 +1,4 @@
-import MockBlock from '../../../mock/Block'
+import Block from '../../../mock/Block'
 import Section from '.'
 import type { Meta, Story } from '@storybook/react'
 import type { SectionProps } from '.'
@@ -10,7 +10,7 @@ const meta: Meta = {
 
 const Template: Story<SectionProps> = (args) => (
   <Section {...args}>
-    <MockBlock>Form</MockBlock>
+    <Block>Form</Block>
   </Section>
 )
 

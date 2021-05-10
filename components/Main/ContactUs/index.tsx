@@ -1,4 +1,4 @@
-import Button from '../form/Button'
+import Button from '../Button'
 import MessageForm from './MessageForm'
 import React, { useState } from 'react'
 import Section from '../form/Section'

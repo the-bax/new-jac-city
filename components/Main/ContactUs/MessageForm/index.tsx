@@ -1,6 +1,6 @@
-import Button from '../../form/Button'
+import Button from '../../Button'
+import Form from '../../form/Form'
 import InputField from '../../form/InputField'
-import style from './MessageForm.module.css'
 import TextareaField from '../../form/TextareaField'
 import type { Dispatch, FormEvent, SetStateAction } from 'react'
 
@@ -19,7 +19,7 @@ export default function MessageForm({ setIsSuccessful }: ContactUsFormProps): JS
   }
 
   return (
-    <form className={style.form} onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <InputField id={`contact-us-message-form-${NAME}`} label="Name" name={NAME} required={true} type="text" />
       <InputField id={`contact-us-message-form-${EMAIL}`} label="Email" name={EMAIL} required={true} type="email" />
       <TextareaField
@@ -30,6 +30,6 @@ export default function MessageForm({ setIsSuccessful }: ContactUsFormProps): JS
         required={true}
       />
       <Button>Send Message</Button>
-    </form>
+    </Form>
   )
 }
