@@ -16,6 +16,7 @@ export default function ContactUs(): JSX.Element {
       ariaLabel="Contact us."
       description="Any feedback? Please fill out our quick online inquiry form to send us a message."
       header="Contact Us"
+      maxWidth="30rem"
     >
       {isSuccessful ? (
         <>

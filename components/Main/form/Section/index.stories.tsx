@@ -19,12 +19,14 @@ WithDescription.args = {
   ariaLabel: 'Section ariaLabel.',
   description: 'Section description.',
   header: 'Section header',
+  maxWidth: '30rem',
 }
 
 export const WithoutDescription = Template.bind({})
 WithoutDescription.args = {
   ariaLabel: 'Section ariaLabel.',
   header: 'Section header',
+  maxWidth: '30rem',
 }
 
 export default meta
