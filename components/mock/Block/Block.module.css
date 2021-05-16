@@ -1,0 +1,18 @@
+.mockBlock {
+  background-color: hsla(0, 0%, 95%, 1);
+  border: 2px dashed hsla(0, 0%, 80%, 1);
+  color: hsla(0, 0%, 40%, 1);
+  font-size: large;
+  text-align: center;
+  width: 100%;
+}
+
+.tall {
+  height: 18rem;
+  line-height: 18rem;
+}
+
+.short {
+  height: 2rem;
+  line-height: 2rem;
+}

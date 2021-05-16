@@ -1,7 +1,8 @@
 import style from './Player.module.css'
+import type { ReactNode } from 'react'
 
 export type PlayerProps = {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 export default function Player({ children }: PlayerProps): JSX.Element {

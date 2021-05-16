@@ -1,0 +1,9 @@
+:root {
+  --cloudBurst: hsla(224, 45%, 22%, 1);
+  --fiord: hsla(224, 19%, 35%, 1);
+
+  --footerBackground: var(--cloudBurst);
+  --headerBackground: var(--fiord);
+  --linkColorFocusLight: hsla(54, 100%, 90%, 1);
+  --textColorLight: hsla(0, 0%, 100%, 1);
+}

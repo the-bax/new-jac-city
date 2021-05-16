@@ -1,7 +1,8 @@
 import style from './Section.module.css'
+import type { ReactNode } from 'react'
 
 export type SectionProps = {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 export default function Section({ children }: SectionProps): JSX.Element {

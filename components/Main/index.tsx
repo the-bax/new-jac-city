@@ -1,7 +1,8 @@
 import style from './Main.module.css'
+import type { ReactNode } from 'react'
 
 export type MainProps = {
-  children?: React.ReactNode
+  children?: ReactNode
 }
 
 export default function Main({ children }: MainProps): JSX.Element {
