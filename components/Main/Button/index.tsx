@@ -6,9 +6,9 @@ export type ButtonProps = {
   onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
-export default function Button({ children, onClick }: ButtonProps): JSX.Element {
+export default function Button({ children, onClick: handleClick }: ButtonProps): JSX.Element {
   return (
-    <button className={style.button} onClick={onClick}>
+    <button className={style.button} onClick={handleClick}>
       {children}
     </button>
   )

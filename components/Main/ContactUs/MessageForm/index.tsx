@@ -20,15 +20,9 @@ export default function MessageForm({ setIsSuccessful }: ContactUsFormProps): JS
 
   return (
     <Form onSubmit={handleSubmit}>
-      <InputField id={`contact-us-message-form-${NAME}`} label="Name" name={NAME} required={true} type="text" />
-      <InputField id={`contact-us-message-form-${EMAIL}`} label="Email" name={EMAIL} required={true} type="email" />
-      <TextareaField
-        id={`contact-us-message-form-${BODY}`}
-        label="Message"
-        maxLength={500}
-        name={BODY}
-        required={true}
-      />
+      <InputField id={`contact-us-message-form-${NAME}`} label="Name" name={NAME} required type="text" />
+      <InputField id={`contact-us-message-form-${EMAIL}`} label="Email" name={EMAIL} required type="email" />
+      <TextareaField id={`contact-us-message-form-${BODY}`} label="Message" maxLength={500} name={BODY} required />
       <Button>Send Message</Button>
     </Form>
   )

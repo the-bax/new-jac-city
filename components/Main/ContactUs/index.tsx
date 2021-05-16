@@ -1,8 +1,7 @@
-import Button from '../Button'
 import MessageForm from './MessageForm'
 import React, { useState } from 'react'
 import Section from '../form/Section'
-import style from './ContactUs.module.css'
+import SuccessConfirmation from '../form/SuccessConfirmation'
 
 export default function ContactUs(): JSX.Element {
   const [isSuccessful, setIsSuccessful] = useState(false)
@@ -19,12 +18,11 @@ export default function ContactUs(): JSX.Element {
       maxWidth="30rem"
     >
       {isSuccessful ? (
-        <>
-          <p className={style.p}>Your message has been sent successfully!</p>
-          <Button onClick={handleClick}>Send Another Message</Button>
-        </>
+        <SuccessConfirmation message="Your message has been sent successfully!" onClick={handleClick}>
+          Send Another Message
+        </SuccessConfirmation>
       ) : (
-        <MessageForm setIsSuccessful={setIsSuccessful}></MessageForm>
+        <MessageForm setIsSuccessful={setIsSuccessful} />
       )}
     </Section>
   )

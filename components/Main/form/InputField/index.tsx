@@ -3,7 +3,7 @@ import style from './InputField.module.css'
 import type { ChangeEvent } from 'react'
 
 export type InputFieldProps = {
-  id: string
+  id?: string
   label?: string
   name: string
   placeholder?: string

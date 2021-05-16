@@ -1,21 +1,29 @@
 import React, { useState } from 'react'
+import Section from '../form/Section'
 import SignUpForm from './SignUpForm'
-import style from './NewsletterSignUp.module.css'
+import SuccessConfirmation from '../form/SuccessConfirmation'
 
 export default function NewsletterSignUp(): JSX.Element {
   const [isSuccessful, setIsSuccessful] = useState(false)
 
+  const handleClick = () => {
+    setIsSuccessful(false)
+  }
+
   return (
-    <section aria-label="Newsletter sign up." className={style.section}>
-      <h2>Join our newsletter</h2>
-      <p className={style.disclosure}>Keep up to date with the band! Zero spam, and unsubscribe at any time.</p>
-      <div className={style.wrapper}>
-        {isSuccessful ? (
-          <p>You&apos;re in! Keep an eye out for a confirmation email!</p>
-        ) : (
-          <SignUpForm setIsSuccessful={setIsSuccessful} />
-        )}
-      </div>
-    </section>
+    <Section
+      ariaLabel="Newsletter sign up."
+      description="Keep up to date with the band! Zero spam, and unsubscribe at any time."
+      header="Join our newsletter"
+      maxWidth="30rem"
+    >
+      {isSuccessful ? (
+        <SuccessConfirmation message="You're in! Keep an eye out for a confirmation email!" onClick={handleClick}>
+          Add Another Email
+        </SuccessConfirmation>
+      ) : (
+        <SignUpForm setIsSuccessful={setIsSuccessful} />
+      )}
+    </Section>
   )
 }
