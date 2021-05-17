@@ -1,26 +1,20 @@
+import A from '../../lib/A'
+
 export default function SecondaryNav(): JSX.Element {
   return (
     <nav aria-label="Secondary">
       <ul className="capitalize">
         <li>
-          <a href="#section-one" target="_self">
-            Section 1
-          </a>
+          <A href="#section-one">Section 1</A>
         </li>
         <li>
-          <a href="#section-two" target="_self">
-            Section 2
-          </a>
+          <A href="#section-two">Section 2</A>
         </li>
         <li>
-          <a href="#section-three" target="_self">
-            Section 3
-          </a>
+          <A href="#section-three">Section 3</A>
         </li>
         <li>
-          <a href="#section-four" target="_self">
-            Section 4
-          </a>
+          <A href="#section-four">Section 4</A>
         </li>
       </ul>
     </nav>

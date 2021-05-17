@@ -1,7 +1,7 @@
-import Button from '../../Button'
-import Form from '../../form/Form'
-import InputField from '../../form/InputField'
-import TextareaField from '../../form/TextareaField'
+import Button from '../../lib/Button'
+import Form from '../../lib/form/Form'
+import InputField from '../../lib/form/InputField'
+import TextareaField from '../../lib/form/TextareaField'
 import type { Dispatch, FormEvent, SetStateAction } from 'react'
 
 const NAME = 'name'

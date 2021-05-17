@@ -1,6 +1,6 @@
-import Button from '../../Button'
-import Form from '../../form/Form'
-import InputField from '../../form/InputField'
+import Button from '../../lib/Button'
+import Form from '../../lib/form/Form'
+import InputField from '../../lib/form/InputField'
 import type { Dispatch, FormEvent, SetStateAction } from 'react'
 
 export type SignUpFormProps = {

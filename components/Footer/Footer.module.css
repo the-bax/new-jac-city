@@ -8,24 +8,6 @@
   justify-content: center;
 }
 
-.footer a {
-  color: var(--linkColorLight);
-}
-
-.footer a:focus,
-.footer a:hover {
-  color: var(--linkColorFocusLight);
-}
-
-.footer > span {
-  flex: 0 0 auto;
-}
-
-.footer > span:not(:first-of-type)::before {
-  content: '|';
-  margin: 0 var(--spaceOneRatioBigger);
-}
-
 .icon {
   --vertical-offset: var(--spaceFiveRatiosSmaller);
   height: calc(var(--vertical-offset) * 2 + 0.75em);
@@ -34,7 +16,13 @@
   width: calc(var(--vertical-offset) * 2 + 0.75em);
 }
 
-.withIcon {
+.span {
   align-items: baseline;
   display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.span:not(:first-of-type)::before {
+  content: '|';
+  margin: 0 var(--spaceOneRatioBigger);
 }
