@@ -1,4 +1,4 @@
-import A from '../../lib/A'
+import A from '../../library/A'
 
 export default function SecondaryNav(): JSX.Element {
   return (

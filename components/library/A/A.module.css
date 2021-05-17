@@ -1,0 +1,26 @@
+.a {
+  text-decoration: none;
+}
+
+.a:focus,
+.a:hover {
+  text-decoration: underline;
+}
+
+.dark {
+  color: var(--linkColorDark);
+}
+
+.dark:focus,
+.dark:hover {
+  color: var(--linkColorFocusDark);
+}
+
+.light {
+  color: var(--linkColorLight);
+}
+
+.light:focus,
+.light:hover {
+  color: var(--linkColorFocusLight);
+}

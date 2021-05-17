@@ -1,4 +1,4 @@
-import A from '../lib/A'
+import A from '../library/A'
 import style from './Footer.module.css'
 import { SiFacebook as Facebook } from 'react-icons/si'
 
