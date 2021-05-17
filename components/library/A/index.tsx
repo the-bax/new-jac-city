@@ -4,9 +4,9 @@ import type { ReactNode } from 'react'
 export type AProps = {
   ariaLabel?: string
   children: ReactNode
-  color?: 'light' | 'dark'
+  color?: 'dark' | 'light'
   href: string
-  target?: string
+  target?: '_self' | '_blank' | '_parent' | '_top'
 }
 
 export default function A({ ariaLabel, children, color = 'dark', href, target = '_self' }: AProps): JSX.Element {

@@ -1,5 +1,5 @@
 import A from '.'
-import MockBlock from '../../mock/Block'
+import MockBlock from '../mocks/Block'
 import type { AProps } from '.'
 import type { Meta, Story } from '@storybook/react'
 import type { ReactElement } from 'react'

@@ -4,7 +4,7 @@ import type { Meta, Story } from '@storybook/react'
 
 const meta: Meta = {
   component: Block,
-  title: 'components/mock/Block',
+  title: 'components/library/mocks/Block',
 }
 
 const Template: Story<BlockProps> = (args) => <Block {...args}>Block</Block>
