@@ -11,7 +11,7 @@ const meta: Meta = {
 }
 
 export const Default = (): JSX.Element => (
-  <UpcomingTour content={<Block>Content</Block>} sidebar={<Block>Sidebar</Block>} />
+  <UpcomingTour content={<Block>Content</Block>} tickets={<Block>Tickets</Block>} />
 )
 
 export default meta
