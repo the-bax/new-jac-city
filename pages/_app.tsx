@@ -18,7 +18,6 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     <>
       <Head>
         <title>The Jac</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
@@ -31,6 +30,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
         <meta name="description" content={config.siteDescription} />
         <meta name="image" content="/a-gathering-cover.jpg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         {/* Schema.org tags */}
         <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>

@@ -2,15 +2,15 @@ import style from './UpcomingTour.module.css'
 import type { ReactNode } from 'react'
 
 export type UpcomingTourProps = {
-  content: ReactNode
-  tickets: ReactNode
+  intro: ReactNode
+  events: ReactNode
 }
 
-export default function UpcomingTour({ content, tickets }: UpcomingTourProps): JSX.Element {
+export default function UpcomingTour({ intro, events }: UpcomingTourProps): JSX.Element {
   return (
     <div className={style.wrapper}>
-      <section className={style.content}>{content}</section>
-      <section className={style.tickets}>{tickets}</section>
+      <section className={style.intro}>{intro}</section>
+      <section className={style.events}>{events}</section>
     </div>
   )
 }

@@ -10,8 +10,6 @@ const meta: Meta = {
   title: 'components/Main/UpcomingTour',
 }
 
-export const Default = (): JSX.Element => (
-  <UpcomingTour content={<Block>Content</Block>} tickets={<Block>Tickets</Block>} />
-)
+export const Default = (): JSX.Element => <UpcomingTour intro={<Block>Intro</Block>} events={<Block>Events</Block>} />
 
 export default meta

@@ -1,12 +1,12 @@
-.content {
-  flex-basis: 10rem;
-  flex-grow: 9999;
+.events {
+  flex-basis: 32.5rem;
+  flex-grow: 1;
   margin: var(--space);
 }
 
-.tickets {
-  flex-basis: 32.5rem;
-  flex-grow: 1;
+.intro {
+  flex-basis: 10rem;
+  flex-grow: 9999;
   margin: var(--space);
 }
 
