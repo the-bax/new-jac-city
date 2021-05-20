@@ -13,7 +13,7 @@ export default function Event({ address, city }: EventProps): JSX.Element {
         {address}
       </div>
       <a className={style.tickets} href=".">
-        Tickets
+        TICKETS
       </a>
     </div>
   )

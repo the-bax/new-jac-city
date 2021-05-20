@@ -1,6 +1,7 @@
 :root {
   --cloudBurst: hsla(224, 45%, 22%, 1);
   --fiord: hsla(224, 19%, 35%, 1);
+  --malibu: hsla(212, 100%, 67%, 1);
 
   --footerBackground: var(--cloudBurst);
   --headerBackground: var(--fiord);

@@ -3,23 +3,24 @@
 }
 
 .location {
-  color: hsl(224, 45%, 22%);
+  color: var(--cloudBurst);
   font-size: 1rem;
   line-height: 1.125;
   margin-right: 30px;
 }
 
 .tickets {
-  color: hsl(212, 100%, 67%);
+  color: var(--malibu);
   flex-grow: 0;
   flex-shrink: 0;
+  font-family: var(--oswald);
   font-size: 1.25rem;
   font-weight: 700;
 }
 
 .wrapper {
   align-items: center;
-  border: 1px solid hsl(212, 100%, 67%);
+  border: 1px solid var(--malibu);
   border-radius: 2px;
   display: inline-flex;
   flex-direction: row;
