@@ -22,7 +22,9 @@
   align-items: center;
   border: 1px solid var(--malibu);
   border-radius: 2px;
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  min-width: min-content;
   padding: 10px;
 }
