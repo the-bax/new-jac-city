@@ -1,4 +1,3 @@
-import A from '../library/A'
 import style from './Footer.module.css'
 import { SiFacebook as Facebook } from 'react-icons/si'
 
@@ -7,16 +6,23 @@ export default function Footer(): JSX.Element {
     <footer className={style.footer}>
       <span className={style.span}>
         Connect with us on&nbsp;
-        <A aria-label="Go to Facebook page." color="light" href="https://www.facebook.com/TheJacNZ/" target="_blank">
+        <a
+          aria-label="Go to Facebook page."
+          className={style.a}
+          color="light"
+          href="https://www.facebook.com/TheJacNZ/"
+          rel="noreferrer"
+          target="_blank"
+        >
           <Facebook aria-label="Facebook icon" className={style.icon} />
-        </A>
+        </a>
       </span>
       <span className={style.span}>Copyright 2021 The Jac</span>
       <span className={style.span}>
         Site built by&nbsp;
-        <A color="light" href="https://paperhat.ltd/" target="_blank">
+        <a className={style.a} color="light" href="https://paperhat.ltd/" rel="noreferrer" target="_blank">
           Paperhat
-        </A>
+        </a>
       </span>
     </footer>
   )
