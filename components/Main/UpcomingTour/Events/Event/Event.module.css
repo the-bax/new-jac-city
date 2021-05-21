@@ -6,7 +6,7 @@
   color: var(--cloudBurst);
   font-size: 1rem;
   line-height: 1.125;
-  margin-right: 30px;
+  margin-right: var(--spaceTwoRatiosBigger);
 }
 
 .tickets {
@@ -26,5 +26,5 @@
   flex-direction: row;
   justify-content: space-between;
   min-width: min-content;
-  padding: 10px;
+  padding: var(--spaceOneRatioSmaller);
 }

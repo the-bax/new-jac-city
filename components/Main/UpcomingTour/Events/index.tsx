@@ -1,11 +1,11 @@
-import Event from './Event'
+import renderEvents from './utilities/renderEvents'
 import style from './Events.module.css'
+import type { EventProps } from './Event'
 
-export default function Events(): JSX.Element {
-  return (
-    <div className={style.wrapper}>
-      <Event address="Manawatu Jazz and Blues Festival, Globe theatre. 8:00pm, June 3rd" city="PALMERSTON NORTH" />
-      <Event address="Manawatu Jazz and Blues Festival, Globe theatre. 8:00pm, June 3rd" city="PALMERSTON NORTH" />
-    </div>
-  )
+export type EventsProps = {
+  events: EventProps[]
+}
+
+export default function Events({ events }: EventsProps): JSX.Element {
+  return <ul className={style.ul}>{renderEvents(events)}</ul>
 }

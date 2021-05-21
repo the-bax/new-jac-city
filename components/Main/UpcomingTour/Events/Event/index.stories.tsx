@@ -7,7 +7,7 @@ const meta: Meta = {
 }
 
 export const Default = (): JSX.Element => (
-  <Event address="Manawatu Jazz and Blues Festival, Globe theatre. 8:00pm, June 3rd" city="PALMERSTON NORTH" />
+  <Event address="Manawatu Jazz and Blues Festival, Globe theatre. 8:00pm, June 3rd" city="PALMERSTON NORTH" href="." />
 )
 
 export default meta

@@ -1,8 +1,9 @@
-.wrapper {
+.ul {
   display: flex;
   flex-direction: column;
+  min-width: min-content;
 }
 
-.wrapper > div + div {
-  margin-top: 1rem;
+.ul > li + li {
+  margin-top: var(--spaceOneRatioSmaller);
 }
