@@ -1,4 +1,5 @@
 import InputField from '.'
+import { useState } from 'react'
 import type { InputFieldProps } from '.'
 import type { Meta, Story } from '@storybook/react'
 
@@ -7,7 +8,10 @@ const meta: Meta = {
   title: 'components/Main/library/form/InputField',
 }
 
-const Template: Story<InputFieldProps> = (args) => <InputField {...args} />
+const Template: Story<InputFieldProps> = (args) => {
+  const [value, setValue] = useState('')
+  return <InputField {...args} setValue={setValue} value={value} />
+}
 
 export const WithLabel = Template.bind({})
 WithLabel.args = {

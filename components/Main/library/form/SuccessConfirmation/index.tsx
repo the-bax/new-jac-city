@@ -8,15 +8,11 @@ export type SuccessConfirmationProps = {
   onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
-export default function SuccessConfirmation({
-  children,
-  message,
-  onClick: handleClick,
-}: SuccessConfirmationProps): JSX.Element {
+export default function SuccessConfirmation({ children, message, onClick }: SuccessConfirmationProps): JSX.Element {
   return (
     <>
       <p className={style.p}>{message}</p>
-      <Button onClick={handleClick}>{children}</Button>
+      <Button onClick={onClick}>{children}</Button>
     </>
   )
 }

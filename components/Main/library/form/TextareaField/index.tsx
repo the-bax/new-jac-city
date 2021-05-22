@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
 import style from './TextareaField.module.css'
-import type { ChangeEvent } from 'react'
+import { useState } from 'react'
+import type { ChangeEvent, Dispatch, SetStateAction } from 'react'
 
 export type TextareaFieldProps = {
   id: string
@@ -9,6 +9,8 @@ export type TextareaFieldProps = {
   name: string
   placeholder?: string
   required?: boolean
+  setValue: Dispatch<SetStateAction<string>>
+  value: string
 }
 
 export default function TextareaField({
@@ -18,8 +20,9 @@ export default function TextareaField({
   name,
   placeholder,
   required = false,
+  setValue,
+  value,
 }: TextareaFieldProps): JSX.Element {
-  const [value, setValue] = useState('')
   const [length, setLength] = useState(0)
 
   const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {

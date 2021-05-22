@@ -1,7 +1,7 @@
 import MessageForm from './MessageForm'
-import React, { useState } from 'react'
 import Section from '../library/form/Section'
 import SuccessConfirmation from '../library/form/SuccessConfirmation'
+import { useState } from 'react'
 
 export default function ContactUs(): JSX.Element {
   const [isSuccessful, setIsSuccessful] = useState(false)

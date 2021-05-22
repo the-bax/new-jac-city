@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
 import Section from '../library/form/Section'
 import SignUpForm from './SignUpForm'
 import SuccessConfirmation from '../library/form/SuccessConfirmation'
+import { useState } from 'react'
 
 export default function NewsletterSignUp(): JSX.Element {
   const [isSuccessful, setIsSuccessful] = useState(false)
