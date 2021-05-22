@@ -1,6 +1,6 @@
 import style from './TextareaField.module.css'
 import { useState } from 'react'
-import type { ChangeEvent, Dispatch, SetStateAction } from 'react'
+import type { ChangeEvent } from 'react'
 
 export type TextareaFieldProps = {
   id: string
@@ -9,7 +9,7 @@ export type TextareaFieldProps = {
   name: string
   placeholder?: string
   required?: boolean
-  setValue: Dispatch<SetStateAction<string>>
+  setValue: (value: string) => void
   value: string
 }
 

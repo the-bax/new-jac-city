@@ -5,14 +5,25 @@ import TextareaField from '../../form/TextareaField'
 import { useState } from 'react'
 import type { Dispatch, FormEvent, SetStateAction } from 'react'
 
+const BODY = 'body'
+const EMAIL = 'email'
+const NAME = 'name'
+const ID_PREFIX = 'contact-us-message-form-'
+
 export type ContactUsFormProps = {
   setIsSuccessful: Dispatch<SetStateAction<boolean>>
 }
 
 export default function MessageForm({ setIsSuccessful }: ContactUsFormProps): JSX.Element {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [body, setBody] = useState('')
+  const [message, setMessage] = useState({
+    [BODY]: '',
+    [EMAIL]: '',
+    [NAME]: '',
+  })
+
+  const set = (messagePropertyName: string) => (messagePropertyValue: string) => {
+    setMessage({ ...message, [messagePropertyName]: messagePropertyValue })
+  }
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -22,31 +33,31 @@ export default function MessageForm({ setIsSuccessful }: ContactUsFormProps): JS
   return (
     <Form onSubmit={handleSubmit}>
       <InputField
-        id="contact-us-message-form-name"
+        id={ID_PREFIX + NAME}
         label="Name"
-        name="name"
+        name={NAME}
         required
-        setValue={setName}
+        setValue={set(NAME)}
         type="text"
-        value={name}
+        value={message[NAME]}
       />
       <InputField
-        id="contact-us-message-form-email"
+        id={ID_PREFIX + EMAIL}
         label="Email"
-        name="email"
+        name={EMAIL}
         required
-        setValue={setEmail}
+        setValue={set(EMAIL)}
         type="email"
-        value={email}
+        value={message[EMAIL]}
       />
       <TextareaField
-        id="contact-us-message-form-body"
+        id={ID_PREFIX + BODY}
         label="Message"
         maxLength={500}
-        name="body"
+        name={BODY}
         required
-        setValue={setBody}
-        value={body}
+        setValue={set(BODY)}
+        value={message[BODY]}
       />
       <Button>Send Message</Button>
     </Form>

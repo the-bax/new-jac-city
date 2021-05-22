@@ -1,5 +1,5 @@
 import style from './InputField.module.css'
-import type { ChangeEvent, Dispatch, SetStateAction } from 'react'
+import type { ChangeEvent } from 'react'
 
 export type InputFieldProps = {
   id?: string
@@ -7,7 +7,7 @@ export type InputFieldProps = {
   name: string
   placeholder?: string
   required?: boolean
-  setValue: Dispatch<SetStateAction<string>>
+  setValue: (value: string) => void
   type: 'email' | 'password' | 'text'
   value: string
 }
