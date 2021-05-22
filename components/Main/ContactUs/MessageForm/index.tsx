@@ -11,10 +11,10 @@ const NAME = 'name'
 const ID_PREFIX = 'contact-us-message-form-'
 
 export type ContactUsFormProps = {
-  setIsSuccessful: Dispatch<SetStateAction<boolean>>
+  setIsFilling: Dispatch<SetStateAction<boolean>>
 }
 
-export default function MessageForm({ setIsSuccessful }: ContactUsFormProps): JSX.Element {
+export default function MessageForm({ setIsFilling }: ContactUsFormProps): JSX.Element {
   const [message, setMessage] = useState({
     [BODY]: '',
     [EMAIL]: '',
@@ -27,7 +27,7 @@ export default function MessageForm({ setIsSuccessful }: ContactUsFormProps): JS
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    setIsSuccessful(true)
+    setIsFilling(false)
   }
 
   return (

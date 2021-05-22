@@ -5,15 +5,15 @@ import { useState } from 'react'
 import type { Dispatch, FormEvent, SetStateAction } from 'react'
 
 export type SignUpFormProps = {
-  setIsSuccessful: Dispatch<SetStateAction<boolean>>
+  setIsFilling: Dispatch<SetStateAction<boolean>>
 }
 
-export default function SignUpForm({ setIsSuccessful }: SignUpFormProps): JSX.Element {
+export default function SignUpForm({ setIsFilling }: SignUpFormProps): JSX.Element {
   const [email, setEmail] = useState('')
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    setIsSuccessful(true)
+    setIsFilling(false)
   }
 
   return (

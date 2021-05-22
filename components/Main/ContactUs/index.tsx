@@ -4,10 +4,10 @@ import SuccessConfirmation from '../form/SuccessConfirmation'
 import { useState } from 'react'
 
 export default function ContactUs(): JSX.Element {
-  const [isSuccessful, setIsSuccessful] = useState(false)
+  const [isFilling, setIsFilling] = useState(true)
 
-  const handleClick = () => {
-    setIsSuccessful(false)
+  const setIsFillingTrue = () => {
+    setIsFilling(true)
   }
 
   return (
@@ -17,12 +17,12 @@ export default function ContactUs(): JSX.Element {
       header="Contact Us"
       maxWidth="30rem"
     >
-      {isSuccessful ? (
-        <SuccessConfirmation message="Your message has been sent successfully!" onClick={handleClick}>
+      {isFilling ? (
+        <MessageForm setIsFilling={setIsFilling} />
+      ) : (
+        <SuccessConfirmation message="Your message has been sent successfully!" onClick={setIsFillingTrue}>
           Send Another Message
         </SuccessConfirmation>
-      ) : (
-        <MessageForm setIsSuccessful={setIsSuccessful} />
       )}
     </Section>
   )

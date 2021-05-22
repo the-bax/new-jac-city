@@ -4,10 +4,10 @@ import SuccessConfirmation from '../form/SuccessConfirmation'
 import { useState } from 'react'
 
 export default function NewsletterSignUp(): JSX.Element {
-  const [isSuccessful, setIsSuccessful] = useState(false)
+  const [isFilling, setIsFilling] = useState(true)
 
-  const handleClick = () => {
-    setIsSuccessful(false)
+  const setIsFillingTrue = () => {
+    setIsFilling(true)
   }
 
   return (
@@ -17,12 +17,12 @@ export default function NewsletterSignUp(): JSX.Element {
       header="Join our newsletter"
       maxWidth="30rem"
     >
-      {isSuccessful ? (
-        <SuccessConfirmation message="You're in! Keep an eye out for a confirmation email!" onClick={handleClick}>
+      {isFilling ? (
+        <SignUpForm setIsFilling={setIsFilling} />
+      ) : (
+        <SuccessConfirmation message="You're in! Keep an eye out for a confirmation email!" onClick={setIsFillingTrue}>
           Add Another Email
         </SuccessConfirmation>
-      ) : (
-        <SignUpForm setIsSuccessful={setIsSuccessful} />
       )}
     </Section>
   )
