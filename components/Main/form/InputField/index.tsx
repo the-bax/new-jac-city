@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
 import style from './InputField.module.css'
-import type { ChangeEvent } from 'react'
+import type { ChangeEvent, Dispatch, SetStateAction } from 'react'
 
 export type InputFieldProps = {
   id?: string
@@ -8,12 +7,21 @@ export type InputFieldProps = {
   name: string
   placeholder?: string
   required?: boolean
+  setValue: Dispatch<SetStateAction<string>>
   type: 'email' | 'password' | 'text'
+  value: string
 }
 
-export default function InputField({ id, label, name, placeholder, required, type }: InputFieldProps): JSX.Element {
-  const [value, setValue] = useState('')
-
+export default function InputField({
+  id,
+  label,
+  name,
+  placeholder,
+  required,
+  setValue,
+  type,
+  value,
+}: InputFieldProps): JSX.Element {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value)
   }
