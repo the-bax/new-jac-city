@@ -1,19 +1,19 @@
 import Button from '../../Button'
-import Form from '../../form/Form'
-import InputField from '../../form/InputField'
+import Form from '../../form/Section/StepController/Form'
+import InputField from '../../form/Section/StepController/Form/InputField'
 import { useState } from 'react'
-import type { Dispatch, FormEvent, SetStateAction } from 'react'
+import type { FormEvent } from 'react'
 
 export type SignUpFormProps = {
-  setIsFilling: Dispatch<SetStateAction<boolean>>
+  nextStep: () => void
 }
 
-export default function SignUpForm({ setIsFilling }: SignUpFormProps): JSX.Element {
+export default function SignUpForm({ nextStep }: SignUpFormProps): JSX.Element {
   const [email, setEmail] = useState('')
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    setIsFilling(false)
+    nextStep()
   }
 
   return (

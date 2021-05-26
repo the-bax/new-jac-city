@@ -1,34 +1,34 @@
-import InputField from '.'
+import TextareaField from '.'
 import { useState } from 'react'
-import type { InputFieldProps } from '.'
+import type { TextareaFieldProps } from '.'
 import type { Meta, Story } from '@storybook/react'
 
 const meta: Meta = {
-  component: InputField,
-  title: 'components/Main/form/InputField',
+  component: TextareaField,
+  title: 'components/Main/form/Section/SubmissionPanel/Form/TextareaField',
 }
 
-const Template: Story<InputFieldProps> = (args) => {
+const Template: Story<TextareaFieldProps> = (args) => {
   const [value, setValue] = useState('')
-  return <InputField {...args} setValue={setValue} value={value} />
+  return <TextareaField {...args} setValue={setValue} value={value} />
 }
 
 export const WithLabel = Template.bind({})
 WithLabel.args = {
   id: 'name',
   label: 'Name',
+  maxLength: 500,
   name: 'name',
   placeholder: 'Name',
   required: true,
-  type: 'text',
 }
 
 export const WithoutLabel = Template.bind({})
 WithoutLabel.args = {
   id: 'name',
+  maxLength: 500,
   name: 'name',
   placeholder: 'Name',
-  type: 'text',
 }
 
 export default meta
