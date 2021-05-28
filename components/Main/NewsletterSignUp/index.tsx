@@ -1,17 +1,19 @@
-import Confirmation from '../form/Section/StepController/Confirmation'
+import Confirmation from '../form/Section/StepSwitch/Confirmation'
 import Section from '../form/Section'
 import SignUpForm from './SignUpForm'
-import StepController from '../form/Section/StepController'
-
-const renderConfirmation = (nextStep: () => void) => (
-  <Confirmation message="You're in! Keep an eye out for a confirmation email!" nextStep={nextStep}>
-    Add Another Email
-  </Confirmation>
-)
-
-const renderForm = (nextStep: () => void) => <SignUpForm nextStep={nextStep} />
+import { useState } from 'react'
 
 export default function NewsletterSignUp(): JSX.Element {
+  const [isFilling, setIsFilling] = useState(true)
+
+  const setIsFillingFalse = () => {
+    setIsFilling(false)
+  }
+
+  const setIsFillingTrue = () => {
+    setIsFilling(true)
+  }
+
   return (
     <Section
       ariaLabel="Newsletter sign up."
@@ -19,7 +21,13 @@ export default function NewsletterSignUp(): JSX.Element {
       header="Join our newsletter"
       maxWidth="30rem"
     >
-      <StepController renderConfirmation={renderConfirmation} renderForm={renderForm} />
+      {isFilling ? (
+        <SignUpForm next={setIsFillingFalse} />
+      ) : (
+        <Confirmation message="You're in! Keep an eye out for a confirmation email!" next={setIsFillingTrue}>
+          Add Another Email
+        </Confirmation>
+      )}
     </Section>
   )
 }

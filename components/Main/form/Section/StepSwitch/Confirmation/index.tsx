@@ -5,14 +5,14 @@ import { ReactNode } from 'react'
 export type ConfirmationProps = {
   children: ReactNode
   message: string
-  nextStep?: () => void
+  next?: () => void
 }
 
-export default function Confirmation({ children, message, nextStep }: ConfirmationProps): JSX.Element {
+export default function Confirmation({ children, message, next }: ConfirmationProps): JSX.Element {
   return (
     <>
       <p className={style.p}>{message}</p>
-      <Button onClick={nextStep}>{children}</Button>
+      <Button onClick={next}>{children}</Button>
     </>
   )
 }

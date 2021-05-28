@@ -1,6 +1,6 @@
 import MessageForm from './MessageForm'
 import Section from '../form/Section'
-import Confirmation from '../form/Section/StepController/Confirmation'
+import Confirmation from '../form/Section/StepSwitch/Confirmation'
 import { useState } from 'react'
 
 export default function ContactUs(): JSX.Element {
@@ -20,7 +20,7 @@ export default function ContactUs(): JSX.Element {
       {isFilling ? (
         <MessageForm setIsFilling={setIsFilling} />
       ) : (
-        <Confirmation message="Your message has been sent successfully!" nextStep={setIsFillingTrue}>
+        <Confirmation message="Your message has been sent successfully!" next={setIsFillingTrue}>
           Send Another Message
         </Confirmation>
       )}

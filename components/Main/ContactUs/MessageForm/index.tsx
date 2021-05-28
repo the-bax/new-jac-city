@@ -1,7 +1,7 @@
 import Button from '../../Button'
-import Form from '../../form/Section/StepController/Form'
-import InputField from '../../form/Section/StepController/Form/InputField'
-import TextareaField from '../../form/Section/StepController/Form/TextareaField'
+import Form from '../../form/Section/StepSwitch/Form'
+import InputField from '../../form/Section/StepSwitch/Form/InputField'
+import TextareaField from '../../form/Section/StepSwitch/Form/TextareaField'
 import { useState } from 'react'
 import type { Dispatch, FormEvent, SetStateAction } from 'react'
 
