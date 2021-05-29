@@ -4,7 +4,7 @@ import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
   component: Form,
-  title: 'components/Main/form/Section/SubmissionPanel/Form',
+  title: 'components/Main/form/Section/StepSwitch/Form',
 }
 
 export const Default = (): JSX.Element => (
