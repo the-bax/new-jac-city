@@ -11,6 +11,7 @@ const meta: Meta = {
 
 const Step0 = (): JSX.Element => {
   const next = useContext(NextContext)
+
   return (
     <Block>
       Step 0 <Button onClick={next}>Next</Button>
@@ -20,6 +21,7 @@ const Step0 = (): JSX.Element => {
 
 const Step1 = (): JSX.Element => {
   const next = useContext(NextContext)
+
   return (
     <Block>
       Step 1 <Button onClick={next}>Next</Button>

@@ -7,8 +7,12 @@ const meta: Meta = {
   title: 'components/Main/form/Section/StepSwitch/Form',
 }
 
+function mockSubmit() {
+  console.log('mock submit')
+}
+
 export const Default = (): JSX.Element => (
-  <Form>
+  <Form onSubmit={mockSubmit}>
     <Block height="short">Input</Block>
     <Block height="short">Input</Block>
     <Block height="short">Button</Block>

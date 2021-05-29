@@ -1,6 +1,6 @@
 import InputField from '.'
 import { useState } from 'react'
-import type { InputFieldProps } from '.'
+import type { InputFieldProps } from './type'
 import type { Meta, Story } from '@storybook/react'
 
 const meta: Meta = {

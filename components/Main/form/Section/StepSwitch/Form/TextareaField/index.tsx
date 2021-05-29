@@ -1,17 +1,7 @@
 import style from './TextareaField.module.css'
 import { useState } from 'react'
 import type { ChangeEvent } from 'react'
-
-export type TextareaFieldProps = {
-  id: string
-  label?: string
-  maxLength?: number
-  name: string
-  placeholder?: string
-  required?: boolean
-  setValue: (value: string) => void
-  value: string
-}
+import type { TextareaFieldProps } from './types'
 
 export default function TextareaField({
   id,
