@@ -1,6 +1,6 @@
 import style from './InputField.module.css'
 import type { ChangeEvent } from 'react'
-import type { InputFieldProps } from './type'
+import type { InputFieldProps } from './types'
 
 export default function InputField({
   id,

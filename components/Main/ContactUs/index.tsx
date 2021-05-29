@@ -1,15 +1,9 @@
 import MessageForm from './MessageForm'
 import Section from '../form/Section'
-import Confirmation from '../form/Section/StepSwitch/Confirmation'
-import { useState } from 'react'
+import SentConfirmation from './SentConfirmation'
+import StepSwitch from '../form/Section/StepSwitch'
 
 export default function ContactUs(): JSX.Element {
-  const [isFilling, setIsFilling] = useState(true)
-
-  const setIsFillingTrue = () => {
-    setIsFilling(true)
-  }
-
   return (
     <Section
       ariaLabel="Contact us."
@@ -17,13 +11,7 @@ export default function ContactUs(): JSX.Element {
       header="Contact Us"
       maxWidth="30rem"
     >
-      {isFilling ? (
-        <MessageForm setIsFilling={setIsFilling} />
-      ) : (
-        <Confirmation message="Your message has been sent successfully!" next={setIsFillingTrue}>
-          Send Another Message
-        </Confirmation>
-      )}
+      <StepSwitch>{[<MessageForm key={0} />, <SentConfirmation key={1} />]}</StepSwitch>
     </Section>
   )
 }

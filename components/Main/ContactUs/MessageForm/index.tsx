@@ -2,19 +2,14 @@ import Button from '../../Button'
 import Form from '../../form/Section/StepSwitch/Form'
 import InputField from '../../form/Section/StepSwitch/Form/InputField'
 import TextareaField from '../../form/Section/StepSwitch/Form/TextareaField'
-import { useState } from 'react'
-import type { Dispatch, FormEvent, SetStateAction } from 'react'
+import { BODY, EMAIL, NAME, ID_PREFIX } from './constants'
+import { NextContext } from '../../form/Section/StepSwitch'
+import { useContext, useState } from 'react'
+import type { FormEvent } from 'react'
+import type { Next } from '../../form/Section/StepSwitch/types'
 
-const BODY = 'body'
-const EMAIL = 'email'
-const NAME = 'name'
-const ID_PREFIX = 'contact-us-message-form-'
-
-export type ContactUsFormProps = {
-  setIsFilling: Dispatch<SetStateAction<boolean>>
-}
-
-export default function MessageForm({ setIsFilling }: ContactUsFormProps): JSX.Element {
+export default function MessageForm(): JSX.Element {
+  const next = useContext<Next>(NextContext)
   const [message, setMessage] = useState({
     [BODY]: '',
     [EMAIL]: '',
@@ -27,7 +22,7 @@ export default function MessageForm({ setIsFilling }: ContactUsFormProps): JSX.E
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    setIsFilling(false)
+    next()
   }
 
   return (
