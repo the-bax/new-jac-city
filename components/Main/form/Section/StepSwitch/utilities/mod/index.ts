@@ -1,5 +1,6 @@
-function mod(m: number, n: number): number {
-  return ((n % m) + m) % m
+function mod(dividend: number, divisor: number): number {
+  const remainder = ((dividend % divisor) + divisor) % divisor
+  return remainder
 }
 
 export default mod
