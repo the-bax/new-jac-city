@@ -1,7 +1,7 @@
 import TextareaField from '.'
 import { useState } from 'react'
-import type { TextareaFieldProps } from '.'
 import type { Meta, Story } from '@storybook/react'
+import type { TextareaFieldProps } from './types'
 
 const meta: Meta = {
   component: TextareaField,

@@ -1,7 +1,7 @@
-import SignUpConfirmation from './SignUpConfirmation'
 import Section from '../form/Section'
 import SignUpForm from './SignUpForm'
 import StepSwitch from '../form/Section/StepSwitch'
+import SubmissionConfirmation from './SubmissionConfirmation'
 
 export default function NewsletterSignUp(): JSX.Element {
   return (
@@ -11,7 +11,7 @@ export default function NewsletterSignUp(): JSX.Element {
       header="Join our newsletter"
       maxWidth="30rem"
     >
-      <StepSwitch>{[<SignUpForm key={0} />, <SignUpConfirmation key={1} />]}</StepSwitch>
+      <StepSwitch>{[<SignUpForm key={0} />, <SubmissionConfirmation key={1} />]}</StepSwitch>
     </Section>
   )
 }

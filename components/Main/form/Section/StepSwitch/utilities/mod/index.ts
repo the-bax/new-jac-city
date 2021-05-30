@@ -1,4 +1,4 @@
-function mod(n: number, m: number): number {
+function mod(m: number, n: number): number {
   return ((n % m) + m) % m
 }
 

@@ -1,7 +1,7 @@
 import MessageForm from './MessageForm'
 import Section from '../form/Section'
-import SentConfirmation from './SentConfirmation'
 import StepSwitch from '../form/Section/StepSwitch'
+import SubmissionConfirmation from './SubmissionConfirmation'
 
 export default function ContactUs(): JSX.Element {
   return (
@@ -11,7 +11,7 @@ export default function ContactUs(): JSX.Element {
       header="Contact Us"
       maxWidth="30rem"
     >
-      <StepSwitch>{[<MessageForm key={0} />, <SentConfirmation key={1} />]}</StepSwitch>
+      <StepSwitch>{[<MessageForm key={0} />, <SubmissionConfirmation key={1} />]}</StepSwitch>
     </Section>
   )
 }
