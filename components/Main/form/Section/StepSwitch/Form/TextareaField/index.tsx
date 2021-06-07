@@ -1,3 +1,4 @@
+import Counter from './Counter'
 import style from './TextareaField.module.css'
 import { useState } from 'react'
 import type { ChangeEvent } from 'react'
@@ -6,7 +7,7 @@ import type { TextareaFieldProps } from './types'
 export default function TextareaField({
   id,
   label,
-  maxLength,
+  lengthLimit,
   name,
   placeholder,
   required = false,
@@ -30,14 +31,13 @@ export default function TextareaField({
       <textarea
         className={style.textarea}
         id={id}
-        maxLength={maxLength}
         name={name}
         onChange={handleChange}
         placeholder={placeholder}
         required={required}
         value={value}
       />
-      {maxLength ? <span className={style.span}>{length}</span> : null}
+      {lengthLimit ? <Counter count={lengthLimit - length} /> : null}
     </div>
   )
 }

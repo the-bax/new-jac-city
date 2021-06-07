@@ -17,7 +17,7 @@ export const WithLabel = Template.bind({})
 WithLabel.args = {
   id: 'name',
   label: 'Name',
-  maxLength: 500,
+  lengthLimit: 10,
   name: 'name',
   placeholder: 'Name',
   required: true,
@@ -26,7 +26,7 @@ WithLabel.args = {
 export const WithoutLabel = Template.bind({})
 WithoutLabel.args = {
   id: 'name',
-  maxLength: 500,
+  lengthLimit: 10,
   name: 'name',
   placeholder: 'Name',
 }

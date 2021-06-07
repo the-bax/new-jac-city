@@ -1,6 +1,7 @@
 import Button from '../../Button'
 import Form from '../../form/Section/StepSwitch/Form'
 import InputField from '../../form/Section/StepSwitch/Form/InputField'
+import MessagePrompter from '../../form/Section/StepSwitch/Form/MessagePrompter'
 import TextareaField from '../../form/Section/StepSwitch/Form/TextareaField'
 import { BODY, EMAIL, NAME, ID_PREFIX } from './constants'
 import { NextContext } from '../../form/Section/StepSwitch'
@@ -8,8 +9,11 @@ import { useContext, useState } from 'react'
 import type { FormEvent } from 'react'
 import type { Next } from '../../form/Section/StepSwitch/types'
 
+const bodyLengthLimit = 5
+
 export default function MessageForm(): JSX.Element {
   const next = useContext<Next>(NextContext)
+  const [errorMessage, setErrorMessage] = useState<string[]>([])
   const [message, setMessage] = useState({
     [BODY]: '',
     [EMAIL]: '',
@@ -22,7 +26,12 @@ export default function MessageForm(): JSX.Element {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    next()
+    if (message[BODY].length <= bodyLengthLimit) {
+      setErrorMessage([])
+      next()
+    } else {
+      setErrorMessage(['Exceeds the maximum length allowed.'])
+    }
   }
 
   return (
@@ -48,12 +57,13 @@ export default function MessageForm(): JSX.Element {
       <TextareaField
         id={ID_PREFIX + BODY}
         label="Message"
-        maxLength={500}
+        lengthLimit={bodyLengthLimit}
         name={BODY}
         required
         setValue={set(BODY)}
         value={message[BODY]}
       />
+      <MessagePrompter>{errorMessage}</MessagePrompter>
       <Button>Send Message</Button>
     </Form>
   )

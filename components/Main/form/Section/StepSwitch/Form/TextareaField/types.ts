@@ -1,7 +1,7 @@
 export type TextareaFieldProps = {
   id: string
   label?: string
-  maxLength?: number
+  lengthLimit?: number
   name: string
   placeholder?: string
   required?: boolean
