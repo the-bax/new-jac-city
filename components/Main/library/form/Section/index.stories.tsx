@@ -1,11 +1,11 @@
-import Block from '../../../mock/Block'
+import Block from '../../../../library/mocks/Block'
 import Section from '.'
 import type { Meta, Story } from '@storybook/react'
 import type { SectionProps } from '.'
 
 const meta: Meta = {
   component: Section,
-  title: 'components/Main/form/Section',
+  title: 'components/Main/library/form/Section',
 }
 
 const Template: Story<SectionProps> = (args) => (
@@ -16,7 +16,7 @@ const Template: Story<SectionProps> = (args) => (
 
 export const WithDescription = Template.bind({})
 WithDescription.args = {
-  ariaLabel: 'Section ariaLabel.',
+  ariaLabel: 'Section aria-label.',
   description: 'Section description.',
   header: 'Section header',
   maxWidth: '30rem',
@@ -24,7 +24,7 @@ WithDescription.args = {
 
 export const WithoutDescription = Template.bind({})
 WithoutDescription.args = {
-  ariaLabel: 'Section ariaLabel.',
+  ariaLabel: 'Section aria-label.',
   header: 'Section header',
   maxWidth: '30rem',
 }

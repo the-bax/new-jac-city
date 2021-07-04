@@ -1,5 +1,5 @@
-import Block from '../../../../mock/Block'
 import Button from '../../../Button'
+import Block from '../../../../../library/mocks/Block'
 import StepSwitch, { NextContext } from '.'
 import { useContext } from 'react'
 import type { Meta } from '@storybook/react'

@@ -1,6 +1,6 @@
 import Button from '../../../../Button'
 import style from './Confirmation.module.css'
-import { NextContext } from '../'
+import { NextContext } from '..'
 import { useContext } from 'react'
 import type { Next } from '../types'
 import type { ReactNode } from 'react'

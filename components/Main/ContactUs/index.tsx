@@ -1,6 +1,6 @@
 import MessageForm from './MessageForm'
-import Section from '../form/Section'
-import StepSwitch from '../form/Section/StepSwitch'
+import Section from '../library/form/Section'
+import StepSwitch from '../library/form/Section/StepSwitch'
 import SubmissionConfirmation from './SubmissionConfirmation'
 
 export default function ContactUs(): JSX.Element {

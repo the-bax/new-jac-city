@@ -1,5 +1,5 @@
-import Block from '../../../../../mock/Block'
 import Form from '.'
+import Block from '../../../../../../library/mocks/Block'
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
