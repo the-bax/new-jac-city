@@ -5,7 +5,7 @@ import type { TextareaFieldProps } from './types'
 
 const meta: Meta = {
   component: TextareaField,
-  title: 'components/Main/form/Section/StepSwitch/Form/TextareaField',
+  title: 'components/Main/library/form/Section/StepSwitch/Form/TextareaField',
 }
 
 const Template: Story<TextareaFieldProps> = (args) => {

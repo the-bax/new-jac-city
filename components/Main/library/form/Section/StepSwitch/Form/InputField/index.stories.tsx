@@ -5,7 +5,7 @@ import type { Meta, Story } from '@storybook/react'
 
 const meta: Meta = {
   component: InputField,
-  title: 'components/Main/form/Section/StepSwitch/Form/InputField',
+  title: 'components/Main/library/form/Section/StepSwitch/Form/InputField',
 }
 
 const Template: Story<InputFieldProps> = (args) => {

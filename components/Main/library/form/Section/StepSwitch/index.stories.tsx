@@ -6,7 +6,7 @@ import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
   component: StepSwitch,
-  title: 'components/Main/form/Section/StepSwitch',
+  title: 'components/Main/library/form/Section/StepSwitch',
 }
 
 type StepProps = {

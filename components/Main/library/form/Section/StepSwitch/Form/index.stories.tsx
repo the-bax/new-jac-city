@@ -4,7 +4,7 @@ import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
   component: Form,
-  title: 'components/Main/form/Section/StepSwitch/Form',
+  title: 'components/Main/library/form/Section/StepSwitch/Form',
 }
 
 function mockSubmit() {
