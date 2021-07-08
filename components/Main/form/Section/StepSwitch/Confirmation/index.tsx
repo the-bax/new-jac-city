@@ -16,7 +16,7 @@ export default function Confirmation({ children, message }: ConfirmationProps): 
   return (
     <>
       <p className={style.p}>{message}</p>
-      <Button onClick={next}>{children}</Button>
+      <Button handleClick={next}>{children}</Button>
     </>
   )
 }

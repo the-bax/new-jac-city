@@ -24,6 +24,7 @@ export default function InputField({
         </label>
       ) : null}
       <input
+        aria-label={label ? undefined : placeholder}
         className={style.input}
         id={id}
         name={name}
