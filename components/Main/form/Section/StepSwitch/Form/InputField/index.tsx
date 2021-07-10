@@ -1,19 +1,17 @@
-import React, { useState } from 'react'
 import style from './InputField.module.css'
 import type { ChangeEvent } from 'react'
+import type { InputFieldProps } from './types'
 
-export type InputFieldProps = {
-  id: string
-  label?: string
-  name: string
-  placeholder?: string
-  required?: boolean
-  type: 'email' | 'password' | 'text'
-}
-
-export default function InputField({ id, label, name, placeholder, required, type }: InputFieldProps): JSX.Element {
-  const [value, setValue] = useState('')
-
+export default function InputField({
+  id,
+  label,
+  name,
+  placeholder,
+  required,
+  setValue,
+  type,
+  value,
+}: InputFieldProps): JSX.Element {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value)
   }
@@ -26,6 +24,7 @@ export default function InputField({ id, label, name, placeholder, required, typ
         </label>
       ) : null}
       <input
+        aria-label={label ? undefined : placeholder}
         className={style.input}
         id={id}
         name={name}

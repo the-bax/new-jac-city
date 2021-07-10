@@ -1,37 +1,24 @@
-import React, { useState } from 'react'
-import style from './SignUpForm.module.css'
-import type { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react'
+import Button from '../../Button'
+import Form from '../../form/Section/StepSwitch/Form'
+import InputField from '../../form/Section/StepSwitch/Form/InputField'
+import { NextContext } from '../../form/Section/StepSwitch'
+import { useContext, useState } from 'react'
+import type { FormEvent } from 'react'
+import type { Next } from '../../form/Section/StepSwitch/types'
 
-export type SignUpFormProps = {
-  setIsSuccessful: Dispatch<SetStateAction<boolean>>
-}
-
-export default function SignUpForm({ setIsSuccessful }: SignUpFormProps): JSX.Element {
+export default function SignUpForm(): JSX.Element {
+  const next = useContext<Next>(NextContext)
   const [email, setEmail] = useState('')
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value)
-  }
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    setIsSuccessful(true)
+    next()
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        className={style.input}
-        name="email"
-        onChange={handleChange}
-        placeholder="Enter Email"
-        required
-        type="email"
-        value={email}
-      />
-      <button className={style.button} type="submit">
-        Join
-      </button>
-    </form>
+    <Form onSubmit={handleSubmit}>
+      <InputField name="email" placeholder="Enter Email" required setValue={setEmail} type="email" value={email} />
+      <Button>Join</Button>
+    </Form>
   )
 }

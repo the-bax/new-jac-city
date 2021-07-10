@@ -1,19 +1,23 @@
 import TextareaField from '.'
-import type { TextareaFieldProps } from '.'
+import { useState } from 'react'
 import type { Meta, Story } from '@storybook/react'
+import type { TextareaFieldProps } from './types'
 
 const meta: Meta = {
   component: TextareaField,
-  title: 'components/Main/form/TextareaField',
+  title: 'components/Main/form/Section/StepSwitch/Form/TextareaField',
 }
 
-const Template: Story<TextareaFieldProps> = (args) => <TextareaField {...args} />
+const Template: Story<TextareaFieldProps> = (args) => {
+  const [value, setValue] = useState('')
+  return <TextareaField {...args} setValue={setValue} value={value} />
+}
 
 export const WithLabel = Template.bind({})
 WithLabel.args = {
   id: 'name',
   label: 'Name',
-  maxLength: 500,
+  lengthLimit: 10,
   name: 'name',
   placeholder: 'Name',
   required: true,
@@ -22,7 +26,7 @@ WithLabel.args = {
 export const WithoutLabel = Template.bind({})
 WithoutLabel.args = {
   id: 'name',
-  maxLength: 500,
+  lengthLimit: 10,
   name: 'name',
   placeholder: 'Name',
 }

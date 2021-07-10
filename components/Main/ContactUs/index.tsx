@@ -1,16 +1,9 @@
-import Button from '../Button'
 import MessageForm from './MessageForm'
-import React, { useState } from 'react'
 import Section from '../form/Section'
-import style from './ContactUs.module.css'
+import StepSwitch from '../form/Section/StepSwitch'
+import SubmissionConfirmation from './SubmissionConfirmation'
 
 export default function ContactUs(): JSX.Element {
-  const [isSuccessful, setIsSuccessful] = useState(false)
-
-  const handleClick = () => {
-    setIsSuccessful(false)
-  }
-
   return (
     <Section
       ariaLabel="Contact us."
@@ -18,14 +11,7 @@ export default function ContactUs(): JSX.Element {
       header="Contact Us"
       maxWidth="30rem"
     >
-      {isSuccessful ? (
-        <>
-          <p className={style.p}>Your message has been sent successfully!</p>
-          <Button onClick={handleClick}>Send Another Message</Button>
-        </>
-      ) : (
-        <MessageForm setIsSuccessful={setIsSuccessful}></MessageForm>
-      )}
+      <StepSwitch>{[<MessageForm key={0} />, <SubmissionConfirmation key={1} />]}</StepSwitch>
     </Section>
   )
 }

@@ -1,25 +1,19 @@
-import React, { useState } from 'react'
+import Counter from './Counter'
 import style from './TextareaField.module.css'
+import { useState } from 'react'
 import type { ChangeEvent } from 'react'
-
-export type TextareaFieldProps = {
-  id: string
-  label?: string
-  maxLength?: number
-  name: string
-  placeholder?: string
-  required?: boolean
-}
+import type { TextareaFieldProps } from './types'
 
 export default function TextareaField({
   id,
   label,
-  maxLength,
+  lengthLimit,
   name,
   placeholder,
   required = false,
+  setValue,
+  value,
 }: TextareaFieldProps): JSX.Element {
-  const [value, setValue] = useState('')
   const [length, setLength] = useState(0)
 
   const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -35,16 +29,16 @@ export default function TextareaField({
         </label>
       ) : null}
       <textarea
+        aria-label={label ? undefined : placeholder}
         className={style.textarea}
         id={id}
-        maxLength={maxLength}
         name={name}
         onChange={handleChange}
         placeholder={placeholder}
         required={required}
         value={value}
       />
-      {maxLength ? <span className={style.span}>{length}</span> : null}
+      {lengthLimit ? <Counter count={lengthLimit - length} /> : null}
     </div>
   )
 }
