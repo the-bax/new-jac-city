@@ -9,7 +9,7 @@ import { useContext, useState } from 'react'
 import type { FormEvent } from 'react'
 import type { Next } from '../../library/form/Section/StepSwitch/types'
 
-const bodyLengthLimit = 5
+const bodyLengthLimit = 500
 
 export default function MessageForm(): JSX.Element {
   const next = useContext<Next>(NextContext)

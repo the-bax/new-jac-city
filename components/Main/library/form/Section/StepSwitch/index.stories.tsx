@@ -18,7 +18,7 @@ const Step = ({ step }: StepProps): JSX.Element => {
 
   return (
     <Block>
-      Step {step} <Button onClick={next}>Next</Button>
+      Step {step} <Button handleClick={next}>Next</Button>
     </Block>
   )
 }

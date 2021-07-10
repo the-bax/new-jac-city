@@ -29,6 +29,7 @@ export default function TextareaField({
         </label>
       ) : null}
       <textarea
+        aria-label={label ? undefined : placeholder}
         className={style.textarea}
         id={id}
         name={name}
