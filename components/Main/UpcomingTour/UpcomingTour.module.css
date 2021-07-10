@@ -1,0 +1,18 @@
+.events {
+  flex-basis: 32.5rem;
+  flex-grow: 1;
+  margin: var(--space);
+}
+
+.intro {
+  flex-basis: 10rem;
+  flex-grow: 9999;
+  margin: var(--space);
+}
+
+.wrapper {
+  --space: var(--spaceThreeRatiosSmaller);
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(-1 * var(--space));
+}

@@ -1,13 +1,13 @@
-import Button from '../../Button'
-import Form from '../../form/Section/StepSwitch/Form'
-import InputField from '../../form/Section/StepSwitch/Form/InputField'
-import MessagePrompter from '../../form/Section/StepSwitch/Form/MessagePrompter'
-import TextareaField from '../../form/Section/StepSwitch/Form/TextareaField'
+import Button from '../../library/Button'
+import Form from '../../library/form/Section/StepSwitch/Form'
+import InputField from '../../library/form/Section/StepSwitch/Form/InputField'
+import MessagePrompter from '../../library/form/Section/StepSwitch/Form/MessagePrompter'
+import TextareaField from '../../library/form/Section/StepSwitch/Form/TextareaField'
 import { BODY, EMAIL, NAME, ID_PREFIX } from './constants'
-import { NextContext } from '../../form/Section/StepSwitch'
+import { NextContext } from '../../library/form/Section/StepSwitch'
 import { useContext, useState } from 'react'
 import type { FormEvent } from 'react'
-import type { Next } from '../../form/Section/StepSwitch/types'
+import type { Next } from '../../library/form/Section/StepSwitch/types'
 
 const bodyLengthLimit = 500
 

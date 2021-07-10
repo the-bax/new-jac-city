@@ -1,6 +1,6 @@
-import Section from '../form/Section'
+import Section from '../library/form/Section'
 import SignUpForm from './SignUpForm'
-import StepSwitch from '../form/Section/StepSwitch'
+import StepSwitch from '../library/form/Section/StepSwitch'
 import SubmissionConfirmation from './SubmissionConfirmation'
 
 export default function NewsletterSignUp(): JSX.Element {

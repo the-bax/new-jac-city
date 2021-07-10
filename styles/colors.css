@@ -1,9 +1,16 @@
 :root {
   --cloudBurst: hsla(224, 45%, 22%, 1);
   --fiord: hsla(224, 19%, 35%, 1);
+  --malibu: hsla(212, 100%, 67%, 1);
 
   --footerBackground: var(--cloudBurst);
   --headerBackground: var(--fiord);
+
+  --linkColorFocusDark: hsla(0, 0%, 0%, 1);
+  --linkColorDark: hsla(0, 0%, 0%, 0.8);
+  --textColorDark: hsla(0, 0%, 0%, 1);
+
   --linkColorFocusLight: hsla(54, 100%, 90%, 1);
+  --linkColorLight: hsla(0, 0%, 100%, 0.8);
   --textColorLight: hsla(0, 0%, 100%, 1);
 }

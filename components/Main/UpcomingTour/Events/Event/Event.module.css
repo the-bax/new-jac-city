@@ -1,0 +1,30 @@
+.city {
+  font-weight: 700;
+}
+
+.location {
+  color: var(--cloudBurst);
+  font-size: 1rem;
+  line-height: 1.125;
+  margin-right: var(--spaceTwoRatiosBigger);
+}
+
+.tickets {
+  color: var(--malibu);
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-family: var(--oswald);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.wrapper {
+  align-items: center;
+  border: 1px solid var(--malibu);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: min-content;
+  padding: var(--spaceOneRatioSmaller);
+}
