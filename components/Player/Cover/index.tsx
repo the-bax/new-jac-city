@@ -6,7 +6,7 @@ export default function Cover(): JSX.Element {
       alt="A Gathering album cover: swans gathering around a pool bearing an odd symbol"
       className={style.cover}
       height={306}
-      src="/a-gathering-cover.jpg"
+      src="/nerve-cover.jpg"
       width={306}
     />
   )

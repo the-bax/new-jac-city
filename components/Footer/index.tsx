@@ -11,7 +11,7 @@ export default function Footer(): JSX.Element {
         </a>
       </span>{' '}
       <span className={style.separator}>|</span>
-      <span>Copyright 2021 The Jac</span> <span className={style.separator}>|</span>{' '}
+      <span>Copyright 2021-24 The Jac</span> <span className={style.separator}>|</span>{' '}
       <span>
         Site built by <a href="https://paperhat.ltd/">Paperhat</a>
       </span>

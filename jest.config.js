@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   setupFilesAfterEnv: ['./jest.setup.js'],
   moduleNameMapper: {
     '^@components(.*)$': '<rootDir>/components$1',

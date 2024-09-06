@@ -8,7 +8,7 @@ export default function Header(): JSX.Element {
         <h1>The Jac</h1>
       </header>
       <Nav />
-      <div className={styles.title}>&ldquo;A Gathering&rdquo; album release tour 2021 coming soon!</div>
+      <div className={styles.title}>Nerve 10 year anniversary tour October 9th-11th</div>
     </>
   )
 }

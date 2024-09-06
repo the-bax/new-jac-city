@@ -5,8 +5,8 @@ export default function Bandcamp(): JSX.Element {
   return (
     <section className={style.bandcamp}>
       <EmbeddedContent
-        src="https://bandcamp.com/EmbeddedPlayer/album=4093709409/size=large/bgcol=transparent/linkcol=0687f5/artwork=none/transparent=true/"
-        title="A Gathering by The Jac"
+        src="https://bandcamp.com/EmbeddedPlayer/album=2195993812/size=large/bgcol=transparent/linkcol=0687f5/artwork=none/transparent=true/"
+        title="Nerve by The Jac"
       />
     </section>
   )

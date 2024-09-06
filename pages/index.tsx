@@ -24,20 +24,49 @@ export default function Home(): JSX.Element {
       <Main>
         <Section>
           <TextBlock>
-            <h2 id="a-gathering">About the album</h2>
+            <h2 id="tour-dates">Tour dates</h2>
             <p>
-              Featuring material from their 2017 collaboration with Korean quartet Black String, plus a swathe of brand
-              new original compositions, A Gathering encapsulates a milestone in their sound. Recorded at Roundhead
-              Studios in Auckland, it is a beautifully produced illustration of a band at the height of its powers;
-              showcasing their intricate and immersive compositions; tight ensemble playing, and assertive, individual
-              improvising voices. Two of the tracks from the album, “Beyond the Palace” and “A Gathering” were nominated
-              for the APRA NZ Best Jazz Composition of the Year Award in 2018, and a third, “Tui”, won the same award in
-              2020.
+              The Jac is celebrating 10 years since their debut album, Nerve, was released on Rattle records. The album
+              received warm reviews and critical acclaim, including a nomination in the Aotearoa Music Awards
+              &ldquo;Best Jazz Album&rdquo; category. Now The Jac is going back to where it all begin with three shows
+              in the Te-Ika-a-Maui / The North Island:
+            </p>
+            <ul>
+              <li>
+                <a href="https://www.creativejazzclub.co.nz/cjc-creative-jazz-club-events" rel="external">
+                  October 9th: Auckland / CJC / Pah Homestead
+                </a>
+              </li>
+              <li>
+                <a href="https://www.cth.co.nz/events-calendar/" rel="external">
+                  October 10th: Cambridge / Cambridge Town Hall
+                </a>
+              </li>
+              <li>
+                <a href="https://www.globetheatre.co.nz/content/whats-0" rel="external">
+                  October 11th: Palmerston North / The Globe Theatre
+                </a>
+              </li>
+            </ul>
+          </TextBlock>
+        </Section>
+        <Section>
+          <TextBlock>
+            <h2 id="albums">About the albums</h2>
+            <p>
+              Featuring material from their{' '}
+              <strong>2017 collaboration with Korean traditional quartet Black String</strong>, plus a swathe of brand
+              new original compositions, the two albums encapsulate a milestone in their sound.
             </p>
             <p>
-              Given the emergence of Covid-19 in March 2020, The Jac’s accompanying tour was put on the back-burner
-              until 2021. A Gathering will now be released in two stages: This is the first five of 10 tracks and the
-              second five will be released in the lead up to the 2021 tour.
+              Recorded at Roundhead Studios in Auckland, they are a beautifully produced illustration of a band at the
+              height of its powers; showcasing their intricate and immersive compositions; tight ensemble playing, and
+              assertive, individual improvising voices.
+            </p>
+            <p>
+              Two of the tracks, “Beyond the Palace” and “A Gathering” were nominated for the
+              <strong>2018 APRA/AMCOS Best Jazz Composition of the Year Award</strong>. A third,{' '}
+              <strong>“Tui”, won the same award in 2020</strong>.
             </p>
           </TextBlock>
         </Section>

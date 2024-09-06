@@ -5,7 +5,10 @@ export default function Nav(): JSX.Element {
     <nav className={style.nav}>
       <ul>
         <li>
-          <a href="#a-gathering">&lsquo;A Gathering&rsquo;</a>
+          <a href="#tour-dates">Tour dates</a>
+        </li>
+        <li>
+          <a href="#albums">Albums</a>
         </li>
         <li>
           <a href="#about-the-jac">About The Jac</a>
